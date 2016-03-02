@@ -1,0 +1,29 @@
+baseurl: "http://invkrh.me"
+languageCode: "en-us"
+title: "Hao Ren"
+theme: "slim"
+permalinks:
+  post: /:year/:month/:slug/
+paginate: 10
+
+menu:
+  main:
+      - Name: "Archive"
+        URL: "/post/"
+        weight: 2
+      - Name: "Tags"
+        URL: "/tags/"
+        weight: 1
+
+
+params:
+  Subtitle: "Data Engineer / Data Scientist"
+  GithubID: "invkrh"
+  TwitterID: "invkrh"
+  LinkedInID: "renhao"
+  GmailID: "invkrh"
+  AnalyticsID: "Your Google Analytics tracking code"
+  DisqusShortname: "Your Disqus shortname"
+  Summary: false # takes true or false
+  Comments: true
+  # if both are set to true, summary is shown

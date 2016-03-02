@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+		{{ partial "head.html" . }}
+
+		<body>
+				<div class="container">
+						{{ partial "header.html" . }}
+						<div class="content">
+								<div class="posts">
+										<div class="post">
+												<h2 class="post-title">
+														<a href="{{ .Permalink }}">{{ .Title }}</a>
+												</h2>
+												{{ partial "post-meta.html" .}}
+												<div class="post-content">
+														{{ .Content }}
+												</div>
+										</div>
+										<div class="pagination">
+												{{ if .NextInSection }}
+													<a class="btn next" href="{{.NextInSection.Permalink}}">Next</a>
+												{{ end }}
+												{{ if .PrevInSection }}
+													<a class="btn previous" href="{{.PrevInSection.Permalink}}">Prev</a>
+												{{ end }}
+										</div>
+								</div>
+						</div>
+
+						<div class="share-btn">
+
+								<h4>Share this post:</h4>
+
+								<a class="btn" href="http://twitter.com/share?text={{.Title}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+										<i class="fa fa-twitter fa-lg"></i>
+										Twitter
+								</a>
+
+								<a class="btn" href="https://www.facebook.com/sharer/sharer.php" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+										<i class="fa fa-facebook fa-lg"></i>
+										Facebook
+								</a>
+
+								<a class="btn" onclick="window.open('https://plus.google.com/share?url='+window.location.href, 'google-plus-share', 'width=490,height=530');return false;">
+										<i class="fa fa-google-plus fa-lg"></i>
+										Google+
+								</a>
+						</a>
+
+				</div>
+				{{ if .Params.Comments }}
+				<div id="disqus_thread"></div>
+				<script>
+						var disqus_config = function () {
+								this.page.url = {
+										{.Permalink
+										}
+								};
+								// this.page.identifier = PAGE_IDENTIFIER;
+						};
+						(function () {
+								var d = document,
+										s = d.createElement('script');
+								s.src = '//{{ .Site.Params.DisqusShortname }}.disqus.com/embed.js';
+								s.setAttribute('data-timestamp', + new Date());
+								(d.head || d.body).appendChild(s);
+						})();
+				</script>
+				<noscript>Please enable JavaScript to view the
+						<a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+				</noscript>
+				{{ end }}
+				{{ partial "footer.html" . }}
+		</div>
+		<script src="{{ .Site.BaseURL }}/js/slim.js"></script>
+		<script src="{{ .Site.BaseURL }}/js/highlight.pack.min.js"></script>
+		<script>
+				hljs.initHighlightingOnLoad();
+		</script>
+		{{ with .Site.Params.AnalyticsID }}{{ partial "analytics.html" . }}{{ end }}
+</body>
+
+</html>
