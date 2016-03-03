@@ -2,6 +2,10 @@
 
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
+if ! [ -e ./public ]; then
+  git submodule add -b master git@github.com:invkrh/invkrh.github.io.git public
+fi
+
 # Build the project.
 hugo -t slim
 
