@@ -22,7 +22,7 @@ params:
   TwitterID: "invkrh"
   LinkedInID: "renhao"
   GmailID: "invkrh"
-  AnalyticsID: "Your Google Analytics tracking code"
+  AnalyticsID: "UA-74632317-1"
   DisqusShortname: "Your Disqus shortname"
   Summary: false # takes true or false
   Comments: true
