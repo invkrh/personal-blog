@@ -71,9 +71,9 @@
 						<a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
 				</noscript>
 				{{ end }}
-				{{ partial "footer.html" . }}
+
 		</div>
-		<script src="{{ .Site.BaseURL }}/js/slim.js"></script>
+		{{ partial "footer.html" . }}
 		<script src="{{ .Site.BaseURL }}/js/highlight.pack.min.js"></script>
 		<script>
 				hljs.initHighlightingOnLoad();

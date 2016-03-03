@@ -4,3 +4,5 @@
 								and
 								<a href="https://github.com/zhe/hugo-theme-slim">Slim theme</a>.</p>
 </div>
+{{ with .Site.Params.AnalyticsID }}{{ partial "analytics.html" . }}{{ end }}
+<script src="{{ .Site.BaseURL }}/js/slim.js"></script>
