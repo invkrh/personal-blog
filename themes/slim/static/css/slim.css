@@ -41,8 +41,8 @@ tbody tr:nth-child(odd) th {
 
 body {
   color: #555;
-  font-family: 'Merriweather', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, Serif;
-  font-size: 100%;
+  font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, Serif;
+  font-size: 110%;
   line-height: 1.7;
   letter-spacing: 0.01rem;
 }
@@ -87,6 +87,10 @@ a {
   text-decoration: none; }
   a:hover, a:focus {
     text-decoration: underline; }
+
+strong {
+  color: #000000;
+}
 
 em {
   text-emphasis-style: circle;
@@ -401,4 +405,9 @@ button,
 
 .share-btn {
   margin-top: 5em
+}
+
+span.katex {
+  font-size: 130%;
+  color: #000000;
 }
