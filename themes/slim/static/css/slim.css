@@ -60,7 +60,6 @@ h6 {
   font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, Serif;
 }
 
-
 h1 {
   font-size: 1.8rem; }
 
@@ -104,7 +103,7 @@ code {
    border: 1px solid #e1e1e8;
    padding: 3px 3px 1px 3px;
    font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
-   font-size: 16px;
+   font-size: 15px;
    /*-webkit-border-radius: 3px;
    -moz-border-radius: 3px;
    -ms-border-radius: 3px;
@@ -223,8 +222,6 @@ button,
 
 .nav {
   position: absolute;
-  /*top: 0.5px;
-  left: -45px;*/
   top: 0px;
   left: -15px;
   transform: translateX(-100%);
@@ -297,7 +294,7 @@ button,
 .container {
   *zoom: 1;
   width: auto;
-  max-width: 45em;
+  max-width: 42em;
   float: none;
   display: block;
   margin-right: auto;
