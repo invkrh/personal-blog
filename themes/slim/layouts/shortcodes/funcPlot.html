@@ -1,0 +1,19 @@
+<div class="chart" id="{{.Get "title"}}"></div>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="/js/functionPlot.js"></script>
+<script type="text/javascript">
+plotFunction({
+	div: "{{.Get "title"}}",
+	title: "{{.Get "title"}}",
+	xlab: "{{.Get "xlab"}}",
+	ylab: "{{.Get "ylab"}}",
+
+  height: parseFloat({{.Get "height"}}),
+  min: parseFloat({{.Get "min"}}),
+  max: parseFloat({{.Get "max"}}),
+  step: parseFloat({{.Get "step"}}),
+  func: function(x) {
+		return eval({{.Get "func"}});
+	}
+})
+</script>

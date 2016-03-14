@@ -2,7 +2,6 @@
 title: The Story about Logistic Function
 tags: [statistic]
 date: "2015-04-28"
-draft: true
 ---
 
 In logistic regression, we take advantage of logistic function to interpret the probability of a data point being a certain label. It seems that we take the logistic function as granted. In this post, I will try to tell some interesting things(at least for me) about logistic function and why it is chosen to be used in classification.
@@ -11,20 +10,20 @@ In logistic regression, we take advantage of logistic function to interpret the 
 
 A Brussels mathematician gave a common model of population growth. He found that the rate of reproduction is proportional to both the existing population and the amount of available resources. The differential equation is the following:
 
-$$
+{{<katex>}}
 \left \{
    \begin{array}{ll}
    \frac{dP}{dt} = rP(1-\frac{P}{K})\\
    \lim_{t \to +\infty} P(t) = K
    \end{array}
 \right.
-$$
+{{</katex>}}
 
-where the constant $$r$$ defines the growth rate and $$K$$ is the carrying capacity which means the maximum population size that the environment can sustain indefinitely.
+where the constant $r$ defines the growth rate and $K$ is the carrying capacity which means the maximum population size that the environment can sustain indefinitely.
 
 Pierre François Verhulst, the brussels, is the first one named the solution to this the **logistic function**
 
-Since $$r$$ and $$K$$ are constant, we can take $$r = K = 1$$ in order to show an ordinary form of the solution. We denote $$y$$ as $$P(t)$$, then the equation becomes:
+Since $r$ and $K$ are constant, we can take $r = K = 1$ in order to show an ordinary form of the solution. We denote $y$ as $P(t)$, then the equation becomes:
 
 $$\frac{dy}{dx}=y \cdot (1-y)$$
 
@@ -32,15 +31,15 @@ it is an ordinary differential equation.
 
 Solution:
 
-$$
-\begin{align*}
+{{<katex>}}
+\begin{array}{rl}
 x &= \int^{y} \frac{dy}{y-y^2} + C^\prime\\
 &= - \ln(\frac{1-y}{y}) + C\\
 &= \ln(\frac{y}{1-y}) + C
-\end{align*}
-$$
+\end{array}
+{{</katex>}}
 
-If $$C = 0$$, then what we get is the following:
+If $C = 0$, then what we get is the following:
 
 $$y = \frac{1}{1+exp(-x)}$$
 
@@ -50,21 +49,17 @@ Yes, the logistic function I have met before.
 
 In logistic regression, we map features to a probability by using a logistic function. It works because logistic function is a **Cumulative Distribution Function (CDF)**.
 
-Every function $$F(x)$$ with the four following properties is a CDF:
+Every function $F(x)$ with the four following properties is a CDF:
 
-$$non-decreasing$$
-
-$$right-continous$$
-
-$$\lim_{x \to -\infty} F(x) = 0$$
-
-$$\lim_{x \to +\infty} F(x) = 1$$
+* $$non-decreasing$$
+* $$right-continous$$
+* $$\lim_{x \to -\infty} F(x) = 0$$
+* $$\lim_{x \to +\infty} F(x) = 1$$
 
 It is obvious that logistic function has the four properties. Furthermore, it has 2 additional properties.
 
-$$F(x) = F(-x)$$
-
-$$F(x) = 1 - F(-x)$$
+* $$F(x) = F(-x)$$
+* $$F(x) = 1 - F(-x)$$
 
 Wait a minute, it looks like I am talking about the properties of CDF of **normal distribution**. You will know that's why soon.
 
@@ -76,26 +71,15 @@ $$f(x) = \frac{dF(x)}{dx} = \frac{1}{2 + exp(-x) + exp(x)}$$
 
 The curve is the following:
 
-<div id="chart_div"></div>
-
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script type="text/javascript" src="/public/javascripts/functionPlot.js"></script>
-<script type="text/javascript">
-plotFunction({
-	div: "chart_div",
-	title: "PDF",
-	xlab: "x",
-	ylab: "f(x)",
-	width: 900,
-	height: 500,
-	min: -6,
-	max: 6,
-	step: 0.01,
-	func: function(x) {
-		return 1 / (2 + Math.exp(-x) + Math.exp(x))
-	}
-})
-</script>
+{{<funcPlot
+  title="PDF"
+  xlab="x"
+  ylab="f(x)"
+  height="500"
+  min="-6"
+  max="6"
+  step="0.01"
+  func="1 / (2 + Math.exp(-x) + Math.exp(x))" >}}
 
 The "bell curve" is very like the pdf of normal distribution. Actually, this distribution is called logistic distribution. It resembles the normal distribution in shape but has heavier tails (higher kurtosis, see appendices).
 
@@ -111,9 +95,9 @@ In fact, we can never guess the CDF of the distribution by trying different kind
 
 You can find the **clue** in my next post. =)
 
-##Appendices:
+## Appendices
 
-Normal distribution $$N(\mu, \sigma)$$:
+Normal distribution $N(\mu, \sigma)$:
 
 * PDF
 
@@ -125,56 +109,32 @@ $$ F(x) = \int_{-\infty}^{x} \frac{1}{\sigma\sqrt{2\pi}}exp\left(-\frac{(x - \mu
 
 $$\text{the integral can not be expressed in terms of elementary functions}$$
 
-In statistic, one uses **error function** $$erf(x)$$ to estimate CDF of normal distribution:
+In statistic, one uses **error function** $erf(x)$ to estimate CDF of normal distribution:
 
 $$F(x) = \Phi \left ( \frac{x - \mu}{\sigma}\right) = \frac{1}{2}\left[ 1 + erf \left( \frac{x - \mu}{\sqrt{2}\sigma}\right)\right]$$
 
-where $$erf(x) = \frac{1}{\sqrt{\pi}} \int_{-x}^{x} exp(-t^2) dt$$, whose value can be looked up in stable pre-computed by numerical analysis.
+where $erf(x) = \frac{1}{\sqrt{\pi}} \int_{-x}^{x} exp(-t^2) dt$, whose value can be looked up in stable pre-computed by numerical analysis.
 
-The $$PDF$$ curve of $$N(0, 1)$$ can be plotted as following:
+The $PDF$ curve of $N(0, 1)$ can be plotted as following:
 
-<div id="ndpdf"></div>
+{{<funcPlot
+  title="PDF of N(0,1)"
+  xlab="x"
+  ylab="f(x)"
+  height="500"
+  min="-6"
+  max="6"
+  step="0.01"
+  func="Math.exp(-0.5 * x * x) / (Math.sqrt(2 * 3.1415926))" >}}
 
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script type="text/javascript" src="/public/javascripts/functionPlot.js"></script>
-<script type="text/javascript">
+The $CDF$ curve of $N(0, 1)$ can be plotted as following:
 
-plotFunction({
-	div: "ndpdf",
-	title: "PDF of N(0,1)",
-	xlab: "x",
-	ylab: "f(x)",
-	width: 900,
-	height: 500,
-	min: -6,
-	max: 6,
-	step: 0.01,
-	func: function(x) {
-		return  Math.exp(-0.5 * x * x) / (Math.sqrt(2 * 3.1415926))
-	}
-})
-</script>
-
-The $$CDF$$ curve of $$N(0, 1)$$ can be plotted as following:
-
-<div id="ndcdf"></div>
-
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script type="text/javascript" src="/public/javascripts/functionPlot.js"></script>
-<script type="text/javascript">
-
-plotFunction({
-	div: "ndcdf",
-	title: "CDF of N(0,1)",
-	xlab: "x",
-	ylab: "f(x)",
-	width: 900,
-	height: 500,
-	min: -6,
-	max: 6,
-	step: 0.01,
-	func: function(x) {
-		return  1/ (Math.exp(-358 * x / 23 + 111* Math.atan(37 * x / 294)) + 1)
-	}
-})
-</script>
+{{<funcPlot
+  title="CDF of N(0,1)"
+  xlab="x"
+  ylab="f(x)"
+  height="500"
+  min="-6"
+  max="6"
+  step="0.01"
+  func="1/ (Math.exp(-358 * x / 23 + 111* Math.atan(37 * x / 294)) + 1)" >}}

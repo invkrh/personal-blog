@@ -1,5 +1,5 @@
 ---
-title: Coprime and Hash Functions
+title: Hash Function and Coprime Numbers
 tags: [number theory, machine learning]
 date: "2015-02-28"
 ---

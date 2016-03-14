@@ -13,10 +13,10 @@ function plotFunction(param) {
 	// draws it.
 	function drawChart() {
 
-		var logisticData = [];
+		var dataPoint = [];
 		for (i = param.min; i <= param.max; i = i + param.step) {
 			var logVal = param.func(i)
-			logisticData.push([i, logVal, "(" + i.toFixed(2) + ", " + logVal.toFixed(5) + ")"])
+			dataPoint.push([i, logVal, "(" + i.toFixed(2) + ", " + logVal.toFixed(5) + ")"])
 		}
 
 		// Create the data table.
@@ -27,7 +27,7 @@ function plotFunction(param) {
 			type: 'string',
 			role: 'tooltip'
 		});
-		data.addRows(logisticData);
+		data.addRows(dataPoint);
 
 		// Set chart options
 		var options = {
@@ -84,7 +84,7 @@ function plotFunction(param) {
 			},
 			legend: 'none',
 			colors: ['#49B1F7'], // line color for serie 1
-			width: param.width,
+			width: 792, // container's width
 			height: param.height
 		};
 

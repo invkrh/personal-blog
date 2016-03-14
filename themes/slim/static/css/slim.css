@@ -53,9 +53,10 @@ h3,
 h4,
 h5,
 h6 {
+  color: #000000;
   font-weight: 700;
   line-height: 1.25;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.75rem;
   font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, Serif;
 }
 
@@ -357,7 +358,7 @@ button,
     content: '';
     position: absolute;
     border: 3px solid transparent;
-    top: 14px;
+    top: 12px;
     -webkit-transition: all 0.3s;
             transition: all 0.3s; }
   .post-title a:before {
@@ -377,6 +378,10 @@ button,
     left: -3px; }
   .post-title a:hover:after {
     right: -3px; }
+
+.post-title {
+  margin-bottom: 0.75rem;
+}
 
 .post-meta {
   color: #ccc;
@@ -401,13 +406,17 @@ button,
 
 .post-content {
   text-align: justify;
-  margin: 2rem 0; }
+  margin: 5rem 0; }
 
 .share-btn {
   margin-top: 5em
 }
 
 span.katex {
-  font-size: 130%;
+  font-size: 120%;
   color: #000000;
+}
+
+.chart {
+  margin-bottom: 2rem;
 }
