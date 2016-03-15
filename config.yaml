@@ -23,7 +23,7 @@ params:
   LinkedInID: "renhao"
   GmailID: "invkrh"
   AnalyticsID: "UA-74632317-1"
-  DisqusShortname: "Your Disqus shortname"
+  DisqusShortname: "invkrh"
   Summary: false # takes true or false
   Comments: true
   # if both are set to true, summary is shown
