@@ -405,9 +405,7 @@ button,
   text-align: justify;
   margin: 5rem 0; }
 
-.share-btn {
-  margin-top: 5em
-}
+
 
 span.katex {
   font-size: 120%;
@@ -416,4 +414,12 @@ span.katex {
 
 .chart {
   margin-bottom: 2rem;
+}
+
+.share-btn {
+  margin-top: 4em
+}
+
+#disqus_thread {
+  margin-top: 4em
 }
