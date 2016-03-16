@@ -20,7 +20,7 @@
 														{{ .Summary }}
 														<a class="read-more" href="{{.RelPermalink}}">&hellip;</a>
 												</div>
-										{{ else if .Site.Params.Content }}
+												{{ else if .Site.Params.Content }}
 												<div class="content">
 														{{ .Content }}
 												</div>
@@ -28,7 +28,14 @@
 										</div>
 										{{ end }}
 								</div>
-								{{ partial "pagination.html" . }}
+								<div class="pagination">
+								  {{ if .Paginator.HasPrev }}
+								    <a class="btn previous" href="{{ .Paginator.Prev.URL }}">Newer</a>
+								  {{ end }}
+								  {{ if .Paginator.HasNext }}
+								    <a class="btn next" href="{{ .Paginator.Next.URL }}">Older</a>
+								  {{ end }}
+								</div>
 						</div>
 				</div>
 				{{ partial "footer.html" . }}
