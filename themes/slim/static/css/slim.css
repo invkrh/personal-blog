@@ -307,19 +307,6 @@ button,
   .container:after {
     clear: both; }
 
-.pagination {
-  position: relative;
-  margin-top: 5em; }
-  .pagination:before, .pagination:after {
-    content: '';
-    display: table; }
-  .pagination:after {
-    clear: both; }
-  .pagination .previous {
-    float: left; }
-  .pagination .next {
-    float: right; }
-
 .footer {
   color: #95a5a6;
   font-size: 14px;
@@ -405,8 +392,6 @@ button,
   text-align: justify;
   margin: 5rem 0; }
 
-
-
 span.katex {
   font-size: 120%;
   color: #000000;
@@ -422,4 +407,40 @@ span.katex {
 
 #disqus_thread {
   margin-top: 4em
+}
+
+.pagination {
+  display: table;
+  position: relative;
+  width: 100%;
+  margin-top: 5em;
+}
+
+.pagination .title {
+  color: #ccc;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.pagination:before, .pagination:after {
+  content: '';
+  display: table;
+}
+
+.pagination:after {
+  clear: both;
+}
+
+.pgrow {
+  display: table-row;
+}
+
+.previous {
+  display: table-cell;
+  float: left;
+}
+
+.next {
+  display: table-cell;
+  float: right;
 }

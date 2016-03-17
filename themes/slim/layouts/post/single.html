@@ -18,23 +18,29 @@
 												</div>
 										</div>
 										<div class="pagination">
+											<div class="pgrow">
 										    {{ if .NextInSection }}
-										      <a class="btn next" href="{{.NextInSection.Permalink}}">Next</a>
+											      <a class="btn next" href="{{.NextInSection.Permalink}}">Newer</a>
 										    {{ end }}
 										    {{ if .PrevInSection }}
-										      <a class="btn previous" href="{{.PrevInSection.Permalink}}">Prev</a>
+											      <a class="btn previous" href="{{.PrevInSection.Permalink}}">Older</a>
 										    {{ end }}
+											</div>
+											<div class="pgrow">
+										    {{ if .NextInSection }}
+														<span class="title next">{{ .NextInSection.Title }}</span>
+										    {{ end }}
+										    {{ if .PrevInSection }}
+														<span class="title previous">{{ .PrevInSection.Title }}</span>
+										    {{ end }}
+											</div>
 										</div>
-
 								</div>
 						</div>
-
 						{{ partial "social-share.html" . }}
-
-			{{ if .Site.Params.Comments }}
-				{{ partial "disqus.html" . }}
-			{{ end }}
-
+				 {{ if .Site.Params.Comments }}
+				    {{ partial "disqus.html" . }}
+			   {{ end }}
 		</div>
 		{{ partial "footer.html" . }}
 		<script src="{{ .Site.BaseURL }}/js/highlight.pack.min.js"></script>
