@@ -42,7 +42,7 @@ tbody tr:nth-child(odd) th {
 body {
   color: #555;
   font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, Serif;
-  font-size: 110%;
+  font-size: 120%;
   line-height: 1.7;
   letter-spacing: 0.01rem;
 }
@@ -222,7 +222,7 @@ button,
 
 .nav {
   position: absolute;
-  top: 0px;
+  top: -2px;
   left: -15px;
   transform: translateX(-100%);
   text-align: right; }
