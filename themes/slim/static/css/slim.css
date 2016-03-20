@@ -192,12 +192,16 @@ button,
   text-decoration: none
 }
 
-.site-tagline {
+.site-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.intro {
   display: inline-block;
 }
 
 .social-bar {
-  float: right;
   display: inline-block;
 }
 
@@ -300,7 +304,7 @@ button,
   margin-right: auto;
   margin-left: auto;
   padding-left: 0;
-  padding-right: 0; }
+  padding-right: 0;}
   .container:before, .container:after {
     content: '';
     display: table; }
@@ -311,9 +315,12 @@ button,
   color: #95a5a6;
   font-size: 14px;
   text-align: center;
-  margin: 2rem 0 1rem; }
-  .footer a {
-    color: #333; }
+  margin: 10rem 0 1rem;
+}
+
+.footer a {
+  color: #333;
+}
 
 .post {
   position: relative;
@@ -390,7 +397,7 @@ button,
 
 .post-content {
   text-align: justify;
-  margin: 5rem 0; }
+  margin: 5rem 0 0; }
 
 span.katex {
   font-size: 120%;
@@ -410,37 +417,47 @@ span.katex {
 }
 
 .pagination {
-  display: table;
+  display: flex;
+  justify-content: space-between;
   position: relative;
   width: 100%;
-  margin-top: 5em;
+  margin-top: 4em;
 }
 
-.pagination .title {
+.pagination-title {
   color: #ccc;
   font-size: 14px;
-  margin-top: 15px;
+  margin-top: 1rem;
 }
 
-.pagination:before, .pagination:after {
+.pagination .previous {
+  display: inline-block;
+}
+
+.pagination .next {
+  display: inline-block;
+}
+
+.previous {
+  text-align: left;
+}
+
+.next {
+  text-align: right;
+}
+
+.btn:hover ~ .pagination-title {
+  color: #000;
+  -webkit-transition: all 0.3s;
+          transition: all 0.3s;
+  text-decoration: none;
+}
+
+/*.pagination:before, .pagination:after {
   content: '';
   display: table;
 }
 
 .pagination:after {
   clear: both;
-}
-
-.pgrow {
-  display: table-row;
-}
-
-.previous {
-  display: table-cell;
-  float: left;
-}
-
-.next {
-  display: table-cell;
-  float: right;
-}
+}*/

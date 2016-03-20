@@ -17,23 +17,19 @@
 														{{ .Content }}
 												</div>
 										</div>
-										<div class="pagination">
-											<div class="pgrow">
-										    {{ if .NextInSection }}
-											      <a class="btn next" href="{{.NextInSection.Permalink}}">Newer</a>
-										    {{ end }}
-										    {{ if .PrevInSection }}
-											      <a class="btn previous" href="{{.PrevInSection.Permalink}}">Older</a>
-										    {{ end }}
-											</div>
-											<div class="pgrow">
-										    {{ if .NextInSection }}
-														<span class="title next">{{ .NextInSection.Title }}</span>
-										    {{ end }}
-										    {{ if .PrevInSection }}
-														<span class="title previous">{{ .PrevInSection.Title }}</span>
-										    {{ end }}
-											</div>
+								</div>
+								<div class="pagination">
+										<div class="previous">
+											{{ if .PrevInSection }}
+												<a class="btn" href="{{ .PrevInSection.Permalink }}">Older</a><br>
+												<p class="pagination-title"><< {{ .PrevInSection.Title }}</p>
+											{{ end }}
+										</div>
+										<div class="next">
+											{{ if .NextInSection }}
+											<a class="btn" href="{{ .NextInSection.Permalink }}">Newer</a><br>
+											<p class="pagination-title">{{ .NextInSection.Title }} >></p>
+											{{ end }}
 										</div>
 								</div>
 						</div>

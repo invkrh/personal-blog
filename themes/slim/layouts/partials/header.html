@@ -2,31 +2,33 @@
 		<h1 class="site-title">
 				<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
 		</h1>
-		<p class="site-tagline">{{ .Site.Params.Subtitle }}</p>
-		<div class="social-bar">
-				{{ with .Site.Params.GithubID }}
-				<a class="social-item" href="https://github.com/{{.}}">
-						<i class="fa fa-github fa-lg" style="color:#000000;"></i>
-				</a>
-				{{ end }}
+		<div class="site-info">
+			<p class="intro">{{ .Site.Params.Subtitle }}</p>
+			<div class="social-bar">
+					{{ with .Site.Params.GithubID }}
+					<a class="social-item" href="https://github.com/{{.}}">
+							<i class="fa fa-github fa-lg" style="color:#000000;"></i>
+					</a>
+					{{ end }}
 
-				{{ with .Site.Params.TwitterID }}
-				<a class="social-item" href="https://twitter.com/{{.}}">
-						<i class="fa fa-twitter fa-lg" style="color:#000000;"></i>
-				</a>
-				{{ end }}
+					{{ with .Site.Params.TwitterID }}
+					<a class="social-item" href="https://twitter.com/{{.}}">
+							<i class="fa fa-twitter fa-lg" style="color:#000000;"></i>
+					</a>
+					{{ end }}
 
-				{{ with .Site.Params.LinkedInID }}
-				<a class="social-item" href="https://www.linkedin.com/in/{{.}}">
-						<i class="fa fa-linkedin fa-lg" style="color:#000000;"></i>
-				</a>
-				{{ end }}
+					{{ with .Site.Params.LinkedInID }}
+					<a class="social-item" href="https://www.linkedin.com/in/{{.}}">
+							<i class="fa fa-linkedin fa-lg" style="color:#000000;"></i>
+					</a>
+					{{ end }}
 
-				{{ with .Site.Params.GmailID }}
-				<a class="social-item" href="mailto:{{.}}@gmail.com">
-						<i class="fa fa-envelope-o fa-lg" style="color:#000000;"></i>
-				</a>
-				{{ end }}
+					{{ with .Site.Params.GmailID }}
+					<a class="social-item" href="mailto:{{.}}@gmail.com">
+							<i class="fa fa-envelope-o fa-lg" style="color:#000000;"></i>
+					</a>
+					{{ end }}
+			</div>
 		</div>
 
 		<div class="nav">
