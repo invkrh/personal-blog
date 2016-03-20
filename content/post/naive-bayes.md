@@ -6,7 +6,7 @@ date: "2015-10-28"
 
 To some extent, naive Bayes and logistic regression are the two sides of the same coin. It depends on what we want to model and the assumptions we make.
 
-According to [this post](/2015/03/loss-function-in-logistic-regression/), given a data point, we want to compute the **posterior**.
+According to [this post]({{< relref "loss-function.md" >}}), given a data point, we want to compute the **posterior**.
 
 If apply Bayes' rule to posterior, we get:
 
@@ -105,7 +105,7 @@ b &= \ln\frac{P(y = 1)}{P(y = 0)} + \frac{\mu_0^T\Sigma^{-1}\mu_0 - \mu_1^T\Sigm
 \end{array}
 {{</katex>}}
 
-$\mathbf{w}$ and $b$ can be trained by minimizing the [loss function](/2015/03/loss-function-in-logistic-regression/).
+$\mathbf{w}$ and $b$ can be trained by minimizing the [loss function]({{< relref "loss-function.md#loss-function" >}}).
 
 In fact, all distributions of exponential family make these assumptions hold. The exponential family densities are all of the following form:
 
