@@ -84,7 +84,7 @@ function plotFunction(param) {
 			},
 			legend: 'none',
 			colors: ['#49B1F7'], // line color for serie 1
-			width: 739, // container's width
+			// width: 500, // By default, it is set to 100% of its container
 			height: param.height
 		};
 
