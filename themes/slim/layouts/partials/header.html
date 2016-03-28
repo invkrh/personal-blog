@@ -1,52 +1,52 @@
 <div class="header">
-		<h1 class="site-title">
-				<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-		</h1>
-		<div class="site-info">
-			<p class="intro">{{ .Site.Params.Subtitle }}</p>
-			<div class="social-bar">
-					{{ with .Site.Params.GithubID }}
-					<a class="social-item" href="https://github.com/{{.}}">
-							<i class="fa fa-github fa-lg" style="color:#000000;"></i>
-					</a>
-					{{ end }}
+				<div class="pull-right dropdown">
+								<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+												<span class="glyphicon glyphicon-menu-hamburger"></span>
+												<!-- <span class="caret"></span> -->
+								</button>
+								<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+												{{ range .Site.Menus.main }}
+												<li>
+																<a href="{{ .URL }}">{{ .Name }}</a>
+												</li>
+												{{end}}
+								</ul>
+				</div>
+				<div class="row">
+								<h1 class="col-xs-12 site-title">
+												<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+								</h1>
 
-					{{ with .Site.Params.TwitterID }}
-					<a class="social-item" href="https://twitter.com/{{.}}">
-							<i class="fa fa-twitter fa-lg" style="color:#000000;"></i>
-					</a>
-					{{ end }}
+				</div>
+				<div class="row site-info">
+								<div class="col-sm-6 intro">{{ .Site.Params.Subtitle }}</div>
+								<div class="col-xs-12 col-sm-6 social-bar">
+												<div class="row">
+																{{ with .Site.Params.GithubID }}
+																<a class="col-lg-offset-4 col-sm-1 col-sm-offset-1" href="https://github.com/{{.}}">
+																				<i class="fa fa-github fa-lg social-icon"></i>
+																</a>
+																{{ end }}
 
-					{{ with .Site.Params.LinkedInID }}
-					<a class="social-item" href="https://www.linkedin.com/in/{{.}}">
-							<i class="fa fa-linkedin fa-lg" style="color:#000000;"></i>
-					</a>
-					{{ end }}
+																{{ with .Site.Params.TwitterID }}
+																<a class="col-sm-1 col-sm-offset-1" href="https://twitter.com/{{.}}">
+																				<i class="fa fa-twitter fa-lg social-icon"></i>
+																</a>
+																{{ end }}
 
-					{{ with .Site.Params.GmailID }}
-					<a class="social-item" href="mailto:{{.}}@gmail.com">
-							<i class="fa fa-envelope-o fa-lg" style="color:#000000;"></i>
-					</a>
-					{{ end }}
-			</div>
-		</div>
+																{{ with .Site.Params.LinkedInID }}
+																<a class="col-sm-1 col-sm-offset-1" href="https://www.linkedin.com/in/{{.}}">
+																				<i class="fa fa-linkedin fa-lg social-icon"></i>
+																</a>
+																{{ end }}
 
-		<div class="nav">
-				<a class="nav-btn" href="#">
-						<span class="ci ci-burger"></span>
-				</a>
-				<ul class="nav-list">
-						{{ range .Site.Menus.main }}
-						<li>
-								<a href="{{ .URL }}">{{ .Name }}</a>
-						</li>
-						{{end}}
-						<!-- <li class="spacer">&ac;</li> -->
-						<!--
-                        {{ with .Site.Params.GithubID }} <li><a href="https://github.com/{{.}}">Github</a></li>{{ end }}
-                        {{ with .Site.Params.TwitterID }} <li><a href="https://twitter.com/{{.}}">Twitter</a></li>{{ end }}
-                        {{ with .Site.Params.LinkedInID }} <li><a href="http://linkedin.com/in/{{.}}">LinkedIn</a></li>{{ end }}
-                        -->
-				</ul>
-		</div>
+																{{ with .Site.Params.GmailID }}
+																<a class="col-sm-1 col-sm-offset-1" href="mailto:{{.}}@gmail.com">
+																				<i class="fa fa-envelope-o fa-lg social-icon"></i>
+																</a>
+																{{ end }}
+												</div>
+								</div>
+				</div>
+
 </div>

@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
 
-		{{ partial "head.html" . }}
+				{{ partial "head.html" . }}
 
-		<body>
-				<div class="container">
-						{{ partial "header.html" . }}
-						<div class="content">
-								<h2>{{ .Title }}</h2>
-								<ul>
-										{{ $data := .Data }}
-										{{ range $key, $value := .Data.Terms }}
-										<li>
-												<h3>
-														<a href="/{{ $data.Plural }}/{{ $key | urlize }}">{{ $key }}</a>
-														({{ len $value }})
-												</h3>
-										</li>
-										{{ end }}
-								</ul>
-						</div>
+				<body>
+								<div class="container">
+												<div class="row">
+																<div class="col-sm-8 col-sm-offset-2">
+																				{{ partial "header.html" . }}
+																				<div class="content">
+																								<h2>{{ .Title }}</h2>
+																								<ul>
+																												{{ $data := .Data }}
+																												{{ range $key, $value := .Data.Terms }}
+																												<li>
+																																<h3>
+																																				<a href="/{{ $data.Plural }}/{{ $key | urlize }}">{{ $key }}</a>
+																																				({{ len $value }})
+																																</h3>
+																												</li>
+																												{{ end }}
+																								</ul>
 
-				</div>
-				{{ partial "footer.html" . }}
-		</body>
+																				</div>
+																</div>
+												</div>
+								</div>
+								{{ partial "footer.html" . }}
+				</body>
 
 </html>
