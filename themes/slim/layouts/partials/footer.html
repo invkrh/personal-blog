@@ -5,11 +5,13 @@
     <a href="https://github.com/zhe/hugo-theme-slim">Slim theme</a>.</p>
 </div>
 
-<span id="top-link-block" data-spy="affix" data-offset-top="500">
+<span id="top-link-block" class="hidden" data-spy="affix">
 				<a href="#top" class="well well-sm" onclick="$('html,body').animate({scrollTop:0},'slow');return false;">
 								<i class="glyphicon glyphicon-chevron-up"></i>
 				</a>
-</span> {{ with .Site.Params.AnalyticsID }}{{ partial "analytics.html" . }}{{ end }}
+</span>
+
+{{ with .Site.Params.AnalyticsID }}{{ partial "analytics.html" . }}{{ end }}
 
 <script src="{{ .Site.BaseURL }}/js/highlight.pack.min.js"></script>
 <script id="dsq-count-scr" src="//invkrh.disqus.com/count.js" async></script>
@@ -42,4 +44,14 @@
   $('.katex-display .katex-html').each(function(i, formula) {
     $(formula).width(postWidth);
   });
+
+  var scroll_offset = 500;
+  if (($(window).height() + scroll_offset) < $(document).height()) {
+    $('#top-link-block').removeClass('hidden').affix({
+      // how far to scroll down before link "slides" into view
+      offset: {
+        top: scroll_offset
+      }
+    });
+  }
 </script>

@@ -80,7 +80,8 @@ dl,
 ol,
 ul {
   margin-top: 0;
-  margin-bottom: 1.75rem; }
+  margin-bottom: 1.75rem;
+}
 
 a {
   color: #2980b9;
@@ -169,13 +170,6 @@ button,
   -webkit-transition: all 0.3s;
           transition: all 0.3s; }
 
-.btn:focus {
-  color: #1ABC9C;
-  background: #fff;
-  border: 1px solid #1ABC9C;
-}
-
-button:hover,
 .btn:hover {
   color: #fff;
   background: #1ABC9C;
@@ -215,7 +209,7 @@ button:hover,
 }
 
 .social-icon {
-  color: #000000;
+  color: #FFF;
 }
 
 .footer {
@@ -373,27 +367,49 @@ span.katex {
   border: 1px solid #1ABC9C;
 }
 
+#app-navbar * {
+  margin: 0;
+}
+
+.navbar-text, .navbar-brand {
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, Serif;
+  font-size: 16px;
+}
+
+
+.navbar-inverse .navbar-brand {
+    font-size: 20px;
+    color: #FFF;
+}
+
+.navbar-default {
+  /*background-color: #000;*/
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
 
 /* Large desktops and laptops */
 @media (min-width: 1200px) {
-  body {font-size: 21px;}
+  body {font-size: 20px;}
 }
 
 /* Landscape tablets and medium desktops */
 @media (min-width: 992px) and (max-width: 1199px) {
 /*@media (min-width: 992px) {*/
-  body {font-size: 20px;}
+  body {font-size: 19px;}
 }
 
 /* Portrait tablets and small desktops */
 @media (min-width: 768px) and (max-width: 991px) {
 /*@media (min-width: 768px) {*/
-  body {font-size: 20px;}
+  body {font-size: 18px;}
 }
 
 /* Landscape phones and portrait tablets */
 @media (max-width: 767px) {
-  body {font-size: 18px;}
+  body {font-size: 17px;}
 }
 
 /* Portrait phones and smaller */
@@ -416,7 +432,7 @@ span.katex {
   }
 
   ::-webkit-scrollbar:vertical {
-      width: 22px;
+      width: 0px;
   }
 
   ::-webkit-scrollbar:horizontal {
@@ -451,7 +467,7 @@ span.katex {
   #top-link-block.affix {
     position: fixed;
     bottom: 5%;
-    right: 10%;
+    right: 5%;
   }
   .well:hover, .well-sm:hover {
     color: #1ABC9C;

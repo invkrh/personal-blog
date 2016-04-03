@@ -1,8 +1,53 @@
 <div class="header">
-  <div class="pull-right dropdown">
+  <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{ .Site.BaseURL }}">Data Hacking</a>
+        <!-- <a class="navbar-brand">{{ .Site.Params.Subtitle }}</a> -->
+      </div>
+      <div class="collapse navbar-collapse" id="app-navbar">
+        <ul class="navbar-right nav navbar-nav">
+          <li>
+            {{ with .Site.Params.GithubID }}
+            <a class="col-xs-3" href="https://github.com/{{.}}">
+              <i class="fa fa-github fa-lg social-icon"></i>
+            </a>
+            {{ end }} {{ with .Site.Params.TwitterID }}
+            <a class="col-xs-3" href="https://twitter.com/{{.}}">
+              <i class="fa fa-twitter fa-lg social-icon"></i>
+            </a>
+            {{ end }} {{ with .Site.Params.LinkedInID }}
+            <a class="col-xs-3" href="https://www.linkedin.com/in/{{.}}">
+              <i class="fa fa-linkedin fa-lg social-icon"></i>
+            </a>
+            {{ end }} {{ with .Site.Params.GmailID }}
+            <a class="col-xs-3" href="mailto:{{.}}@gmail.com">
+              <i class="fa fa-envelope-o fa-lg social-icon"></i>
+            </a>
+            {{ end }}
+            <li>
+        </ul>
+
+        <ul class="nav navbar-nav">
+          {{ range .Site.Menus.main }}
+          <li>
+            <a class="col-sm-6 navbar-text" href="{{ .URL }}">{{ .Name }}</a>
+          </li>
+          {{end}}
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- <div class="pull-right dropdown">
     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
       <span class="glyphicon glyphicon-menu-hamburger"></span>
-      <!-- <span class="caret"></span> -->
     </button>
     <ul class="dropdown-menu">
       {{ range .Site.Menus.main }}
@@ -11,32 +56,14 @@
       </li>
       {{end}}
     </ul>
-  </div>
+  </div> -->
+
   <div class="row">
-    <h1 class="col-xs-12 site-title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+    <h1 class="col-xs-12 site-title">
+      <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+    </h1>
   </div>
   <div class="row site-info">
     <div class="col-xs-12 col-md-6 intro">{{ .Site.Params.Subtitle }}</div>
-    <div class="col-xs-12 col-md-6 text-left social-bar">
-      <div class="row">
-        {{ with .Site.Params.GithubID }}
-        <a class="col-md-offset-3 col-lg-offset-4 col-sm-1" href="https://github.com/{{.}}">
-          <i class="fa fa-github fa-lg social-icon"></i>
-        </a>
-        {{ end }} {{ with .Site.Params.TwitterID }}
-        <a class="col-sm-1 col-sm-offset-1" href="https://twitter.com/{{.}}">
-          <i class="fa fa-twitter fa-lg social-icon"></i>
-        </a>
-        {{ end }} {{ with .Site.Params.LinkedInID }}
-        <a class="col-sm-1 col-sm-offset-1" href="https://www.linkedin.com/in/{{.}}">
-          <i class="fa fa-linkedin fa-lg social-icon"></i>
-        </a>
-        {{ end }} {{ with .Site.Params.GmailID }}
-        <a class="col-sm-1 col-sm-offset-1" href="mailto:{{.}}@gmail.com">
-          <i class="fa fa-envelope-o fa-lg social-icon"></i>
-        </a>
-        {{ end }}
-      </div>
-    </div>
   </div>
 </div>
