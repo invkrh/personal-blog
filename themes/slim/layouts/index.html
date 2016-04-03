@@ -1,53 +1,50 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
 
-				{{ partial "head.html" . }}
+{{ partial "head.html" . }}
 
-				<body>
-								<div class="container">
-												<div class="row">
-																<div class="col-sm-8 col-sm-offset-2">
-																				{{ partial "header.html" . }}
-																				<div class="content">
-																								<div class="posts">
-																												{{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
-																												{{ range $paginator.Pages }}
-																												<div class="post">
-																																<h2 class="post-title">
-																																				<a href="{{ .Permalink }}">{{ .Title }}</a>
-																																</h2>
-																																{{ partial "post-meta.html" .}}
-																																{{ if .Site.Params.Summary }}
-																																<div class="summary">
-																																				{{ .Summary }}
-																																				<a class="read-more" href="{{.RelPermalink}}">&hellip;</a>
-																																</div>
-																												{{ else if .Site.Params.Content }}
-																																<div class="content">
-																																				{{ .Content }}
-																																</div>
-																																{{ end }}
-																												</div>
-																												{{ end }}
-																								</div>
-																				</div>
-																				<div class="row page">
-																								<div class="col-xs-6 previous">
-																												{{ if .Paginator.HasPrev }}
-																												<a class="btn" href="{{ .Paginator.Prev.URL }}">Newer</a>
-																												{{ end }}
-																								</div>
-																								<div class="col-xs-6 next">
-																												{{ if .Paginator.HasNext }}
-																												<a class="btn" href="{{ .Paginator.Next.URL }}">Older</a>
-																												{{ end }}
-																								</div>
-																				</div>
-																</div>
-												</div>
-								</div>
-								{{ partial "footer.html" . }}
-								{{ partial "js-loader.html" . }}
-				</body>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        {{ partial "header.html" . }}
+        <div class="content">
+          <div class="posts">
+            {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+						{{ range $paginator.Pages }}
+	            <div class="post">
+	              <h2 class="post-title">
+									<a href="{{ .Permalink }}">{{ .Title }}</a>
+								</h2>
+								{{ partial "post-meta.html" .}}
+								{{ if .Site.Params.Summary }}
+		              <div class="summary">
+		                {{ .Summary }}
+		                <a class="read-more" href="{{.RelPermalink}}">&hellip;</a>
+		              </div>
+	              {{ else if .Site.Params.Content }}
+		              <div class="content">
+		                {{ .Content }}
+		              </div>
+	              {{ end }}
+	            </div>
+            {{ end }}
+          </div>
+        </div>
+        <div class="row page">
+          <div class="col-xs-6 previous">
+            {{ if .Paginator.HasPrev }}
+            <a class="btn" href="{{ .Paginator.Prev.URL }}">Newer</a> {{ end }}
+          </div>
+          <div class="col-xs-6 next">
+            {{ if .Paginator.HasNext }}
+            <a class="btn" href="{{ .Paginator.Next.URL }}">Older</a> {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ partial "footer.html" . }}
+</body>
 
 </html>

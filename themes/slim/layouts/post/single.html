@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
-				{{ partial "head.html" . }}
-				<body>
-								<div class="container">
-												<div class="row">
-																<div class="col-sm-8 col-sm-offset-2">
-																				{{ partial "header.html" . }}
-																				<div class="content">
-																								<div class="post">
-																												<h2 class="post-title">
-																																<a href="{{ .Permalink }}">{{ .Title }}</a>
-																												</h2>
-																												{{ partial "post-meta.html" .}}
-																												<div class="post-content">
-																																{{ .Content }}
-																												</div>
-																								</div>
-																				</div>
-																				<div class="row page">
-																								<div class="col-xs-6 previous">
-																												{{ if .PrevInSection }}
-																													<a class="btn" href="{{ .PrevInSection.Permalink }}">Older</a><br>
-																													<p class="page-title"><< {{ .PrevInSection.Title }}</p>
-																												{{ end }}
-																								</div>
-																								<div class="col-xs-6 next">
-																												{{ if .NextInSection }}
-																													<a class="btn" href="{{ .NextInSection.Permalink }}">Newer</a><br>
-																													<p class="page-title">{{ .NextInSection.Title }} >></p>
-																												{{ end }}
-																								</div>
-																				</div>
-																				{{ partial "social-share.html" . }}
-																				{{ partial "disqus.html" . }}
-																</div>
-												</div>
-								</div>
-								{{ partial "footer.html" . }}
-								{{ partial "js-loader.html" . }}
-				</body>
+{{ partial "head.html" . }}
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        {{ partial "header.html" . }}
+        <div class="content">
+          <div class="post">
+            <h2 class="post-title">
+							<a href="{{ .Permalink }}">{{ .Title }}</a>
+						</h2> {{ partial "post-meta.html" .}}
+            <div class="post-content">
+              {{ .Content }}
+            </div>
+          </div>
+        </div>
+        <div class="row page">
+          <div class="col-xs-6 previous">
+            {{ if .PrevInSection }}
+            <a class="btn" href="{{ .PrevInSection.Permalink }}">Older</a>
+            <br>
+            <p class="page-title">
+              << {{ .PrevInSection.Title }}</p>
+                {{ end }}
+          </div>
+          <div class="col-xs-6 next">
+            {{ if .NextInSection }}
+            <a class="btn" href="{{ .NextInSection.Permalink }}">Newer</a>
+            <br>
+            <p class="page-title">{{ .NextInSection.Title }} >></p>
+            {{ end }}
+          </div>
+        </div>
+        {{ partial "social-share.html" . }} {{ partial "disqus.html" . }}
+      </div>
+    </div>
+  </div>
+  {{ partial "footer.html" . }}
+</body>
+
 </html>

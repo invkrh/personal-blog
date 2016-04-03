@@ -151,6 +151,7 @@ hr {
 button,
 .btn {
   background-image: none;
+  background-color: #fff;
   border: 1px solid #1ABC9C; /*#ccc*/
   border-radius: 5px;
   color: #1ABC9C; /*#ccc;*/
@@ -167,30 +168,18 @@ button,
   white-space: nowrap;
   -webkit-transition: all 0.3s;
           transition: all 0.3s; }
-  /*button::-moz-focus-inner,
-  .btn::-moz-focus-inner {
-    padding: 0;
-    border: 0; }
-  button:hover, button:focus,
-  .btn:hover,
-  .btn:focus {
-    color: #7fdbff;
-    border: 1px solid #7fdbff;
-    -webkit-transition: all 0.3s;
-            transition: all 0.3s;
-    text-decoration: none; }
-  button:active,
-  .btn:active {
-    color: #0074d9;
-    border: 1px solid #0074d9;
-    -webkit-transition: all 0.3s;
-            transition: all 0.3s; }*/
 
+.btn:focus {
+  color: #1ABC9C;
+  background: #fff;
+  border: 1px solid #1ABC9C;
+}
+
+button:hover,
 .btn:hover {
+  color: #fff;
   background: #1ABC9C;
   border: 1px solid #1ABC9C;
-  color: #fff;
-  text-decoration: none
 }
 
 .header {
@@ -265,7 +254,7 @@ button,
   -webkit-transition: all 0.3s;
           transition: all 0.3s;
 }
-.post-title a:after, .post-title a:before {
+.post-title a:after, .post-title a:before{
   content: '';
   position: absolute;
   border: 3px solid transparent;
@@ -319,8 +308,11 @@ button,
   text-align: justify;
   margin: 5rem 0 0; }
 
+/*.katex-display .katex-html {
+  width: auto;
+}*/
+
 span.katex {
-  font-size: 120%;
   color: #000;
 }
 
@@ -361,31 +353,89 @@ span.katex {
   text-decoration: none;
 }
 
+#top-link-block.affix {
+  position: fixed; /* keeps it on the bottom once in view */
+  bottom: 10%;
+  right: 10%;
+}
+
+.well, .well-sm,
+.well:focus, .well-sm:focus {
+  color: #1ABC9C;
+  background: transparent;
+  /*border: 1px solid #1ABC9C;*/
+  border: transparent;
+}
+
+.well:hover, .well-sm:hover {
+  color: #FFF;
+  background: #1ABC9C;
+  border: 1px solid #1ABC9C;
+}
+
+
 /* Large desktops and laptops */
 @media (min-width: 1200px) {
   body {font-size: 21px;}
 }
 
 /* Landscape tablets and medium desktops */
-/*@media (min-width: 992px) and (max-width: 1199px) {*/
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1199px) {
+/*@media (min-width: 992px) {*/
   body {font-size: 20px;}
 }
 
 /* Portrait tablets and small desktops */
-/*@media (min-width: 768px) and (max-width: 991px) {*/
-@media (min-width: 768px) {
-  body {font-size: 18px;}
+@media (min-width: 768px) and (max-width: 991px) {
+/*@media (min-width: 768px) {*/
+  body {font-size: 20px;}
 }
 
 /* Landscape phones and portrait tablets */
 @media (max-width: 767px) {
-  body {font-size: 17x;}
+  body {font-size: 18px;}
 }
 
 /* Portrait phones and smaller */
 @media (max-width: 480px) {
-  body {font-size: 16px;}
+  body {
+    font-size: 16px;
+  }
+
+  /* Add horizontal scroll bar for katex formula */
+  .katex-display .katex-html {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Make scrollbar visible */
+  ::-webkit-scrollbar {
+      -webkit-appearance: none;
+  }
+
+  ::-webkit-scrollbar:vertical {
+      width: 22px;
+  }
+
+  ::-webkit-scrollbar:horizontal {
+      height: 22px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    /* thumb height = 22px - 20px = 2px*/
+      border-top: 20px solid #ffffff;
+      background-color: #000;
+  }
+
+  ::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: #ffffff;
+  }
+}
+
+@media (max-width: 991px) {
   .post-title:after {
     content: none;
   }
@@ -397,5 +447,15 @@ span.katex {
   }
   .post-meta {
     margin-top: 0px;
+  }
+  #top-link-block.affix {
+    position: fixed;
+    bottom: 5%;
+    right: 10%;
+  }
+  .well:hover, .well-sm:hover {
+    color: #1ABC9C;
+    background: transparent;
+    border: transparent;
   }
 }

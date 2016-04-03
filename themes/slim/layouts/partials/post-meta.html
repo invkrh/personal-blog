@@ -1,33 +1,28 @@
 <div class="row post-meta">
-				<div class="col-xs-4">
-								<div class="row">
-												<div class="col-xs-12 visible-md visible-lg">
-																<span class="post-date">
-																				{{ .Date.Format "Jan 2, 2006" }}
-																				/
-																</span>
-																<span class="disqus-comment-count" data-disqus-identifier="{{ .Permalink }}"></span>
-												</div>
-												<div class="visible-xs visible-sm">
-																<span class="col-xs-12 post-date">
-																				{{ .Date.Format "Jan 2, 2006" }}
-																</span>
-																<span class="col-xs-12 disqus-comment-count" data-disqus-identifier="{{ .Permalink }}"></span>
-												</div>
-								</div>
-				</div>
-				<div class="col-xs-8 text-right">
-								{{ if .Params.tags }}
-								<span class="visible-md visible-lg post-tags">
-												{{ range .Params.tags }}
-												<a href="/tags/{{ . | urlize }}">#{{ . }}</a>
-												{{ end }}
-								</span>
-								<span class="visible-xs visible-sm post-tags">
-												{{ range .Params.tags }}
-												<a class="col-xs-12" href="/tags/{{ . | urlize }}">#{{ . }}</a>
-												{{ end }}
-								</span>
-								{{ end }}
-				</div>
+  <div class="col-xs-4">
+    <div class="row">
+      <div class="col-xs-12 visible-md visible-lg">
+        <span class="post-date">{{ .Date.Format "Jan 2, 2006" }} /</span>
+        <span class="disqus-comment-count" data-disqus-identifier="{{ .Permalink }}"></span>
+      </div>
+      <div class="visible-xs visible-sm">
+        <span class="col-xs-12 post-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+        <span class="col-xs-12 disqus-comment-count" data-disqus-identifier="{{ .Permalink }}"></span>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-8 text-right">
+    {{ if .Params.tags }}
+    <span class="visible-md visible-lg post-tags">
+			{{ range .Params.tags }}
+				<a href="/tags/{{ . | urlize }}">#{{ . }}</a>
+			{{ end }}
+    </span>
+    <span class="visible-xs visible-sm post-tags">
+			{{ range .Params.tags }}
+				<a class="col-xs-12" href="/tags/{{ . | urlize }}">#{{ . }}</a>
+			{{ end }}
+    </span>
+		{{ end }}
+  </div>
 </div>
