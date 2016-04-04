@@ -12,13 +12,6 @@
         <!-- <a class="navbar-brand">{{ .Site.Params.Subtitle }}</a> -->
       </div>
       <div class="collapse navbar-collapse" id="app-navbar">
-        <ul class="nav navbar-nav">
-          {{ range .Site.Menus.main }}
-          <li>
-            <a class="col-xs-4 navbar-text" href="{{ .URL }}">{{ .Name }}</a>
-          </li>
-          {{end}}
-        </ul>
         <ul class="navbar-right nav navbar-nav">
           <li>
             {{ with .Site.Params.GithubID }}
@@ -40,7 +33,13 @@
             {{ end }}
             <li>
         </ul>
-
+        <ul class="nav navbar-nav">
+          {{ range .Site.Menus.main }}
+          <li>
+            <a class="navbar-text" href="{{ .URL }}">{{ .Name }}</a>
+          </li>
+          {{end}}
+        </ul>
       </div>
     </div>
   </nav>
