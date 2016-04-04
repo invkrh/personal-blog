@@ -1,6 +1,7 @@
 ---
 title: Distribute non-serializable objects in Spark
 tags: [Spark]
+categories: [development]
 date: 2016-01-16T23:06:08+01:00
 draft: true
 ---

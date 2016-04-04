@@ -1,6 +1,7 @@
 ---
 title: Loss Function in Logistic Regression
-tags: [machine learning]
+tags: [logistic regression]
+categories: [machine learning]
 date: "2015-03-30"
 ---
 

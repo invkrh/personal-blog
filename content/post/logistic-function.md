@@ -1,6 +1,6 @@
 ---
 title: The Story about Logistic Function
-tags: [statistic]
+categories: [statistic]
 date: "2015-04-28"
 ---
 

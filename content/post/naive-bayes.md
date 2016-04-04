@@ -1,6 +1,7 @@
 ---
 title: Naive Bayes and Logistic Regression
-tags: [machine learning]
+tags: [Bayes, logistic regression]
+categories: [machine learning]
 date: "2015-10-28"
 ---
 

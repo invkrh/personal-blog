@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
-
 {{ partial "head.html" . }}
 
 <body>
@@ -11,12 +10,12 @@
         <div class="content">
           <h2>{{ .Title }}</h2>
           <ul>
-            {{ $data := .Data }} {{ range $key, $value := .Data.Terms }}
-	            <li>
-	              <h3>
-									<a href="/{{ $data.Plural }}/{{ $key | urlize }}">{{ $key }}</a> ({{ len $value }})
-								</h3>
-	            </li>
+            {{ range .Data.Pages }}
+            <li>
+              <h4>
+								<a href="{{ .Permalink }}">{{ .Title }}</a>
+							</h4>
+            </li>
             {{ end }}
           </ul>
         </div>

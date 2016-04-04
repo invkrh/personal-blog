@@ -8,15 +8,18 @@ paginate: 10
 
 menu:
   main:
-      - Name: "Tags"
-        URL: "/tags/"
-        weight: 1
-      - Name: "Archives"
-        URL: "/post/"
-        weight: 2
-      - Name: "About"
-        URL: "/about/"
-        weight: 3
+    - Name: "Archives"
+      URL: "/post/"
+      weight: 1
+    - Name: "Categories"
+      URL: "/categories/"
+      weight: 2
+    - Name: "Tags"
+      URL: "/tags/"
+      weight: 3
+    - Name: "About"
+      URL: "/about/"
+      weight: 4
 
 params:
   Subtitle: "Data Engineer / Data Scientist"

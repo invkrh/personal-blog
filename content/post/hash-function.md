@@ -1,6 +1,7 @@
 ---
 title: Hash Function and Coprime Numbers
-tags: [number theory, machine learning]
+tags: [minhash]
+categories: [number theory, machine learning]
 date: "2015-02-28"
 ---
 
