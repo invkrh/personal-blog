@@ -40,10 +40,15 @@
   renderMathInElement(document.body);
 
   // Adjust formlua width for horizontal scroll bar
-  var postWidth = $(".post-content").first().width();
-  $('.katex-display .katex-html').each(function(i, formula) {
-    $(formula).width(postWidth);
-  });
+  function resizeFormula() {
+    var postWidth = $(".post-content").first().width();
+    $('.katex-display .katex-html').each(function(i, formula) {
+      console.log("post width = " + postWidth);
+      $(formula).width(postWidth * 0.9);
+    });
+  }
+  resizeFormula();
+  $(window).resize(resizeFormula);
 
   var scroll_offset = 500;
   if (($(window).height() + scroll_offset) < $(document).height()) {

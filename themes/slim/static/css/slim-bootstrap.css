@@ -285,10 +285,6 @@ button,
   margin-top: -25px;
 }
 
-/*.post-tags {
-  text-align: right;
-}*/
-
 .post-tags a {
   text-align: right;
 	color: #ccc;
@@ -301,10 +297,6 @@ button,
 .post-content {
   text-align: justify;
   margin: 5rem 0 0; }
-
-/*.katex-display .katex-html {
-  width: auto;
-}*/
 
 span.katex {
   color: #000;
@@ -347,6 +339,8 @@ span.katex {
   text-decoration: none;
 }
 
+/* Scroll-to-top button */
+
 #top-link-block.affix {
   position: fixed; /* keeps it on the bottom once in view */
   bottom: 10%;
@@ -367,6 +361,8 @@ span.katex {
   border: 1px solid #1ABC9C;
 }
 
+/* Navbar */
+
 #app-navbar * {
   margin: 0;
 }
@@ -375,7 +371,6 @@ span.katex {
   font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, Serif;
   font-size: 16px;
 }
-
 
 .navbar-inverse .navbar-brand {
     font-size: 20px;
@@ -414,8 +409,31 @@ span.katex {
 
 /* Portrait phones and smaller */
 @media (max-width: 480px) {
-  body {
-    font-size: 16px;
+  body {font-size: 16px;}
+}
+
+@media (max-width: 991px) {
+  .post-title:after {
+    content: none;
+  }
+  .post-title a {
+    line-height: 30px;
+  }
+  .post-title a:after, .post-title a:before {
+    content: none;
+  }
+  .post-meta {
+    margin-top: 0px;
+  }
+  #top-link-block.affix {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+  }
+  .well:hover, .well-sm:hover {
+    color: #1ABC9C;
+    background: transparent;
+    border: transparent;
   }
 
   /* Add horizontal scroll bar for katex formula */
@@ -448,30 +466,5 @@ span.katex {
   ::-webkit-scrollbar-track {
       border-radius: 10px;
       background-color: #ffffff;
-  }
-}
-
-@media (max-width: 991px) {
-  .post-title:after {
-    content: none;
-  }
-  .post-title a {
-    line-height: 30px;
-  }
-  .post-title a:after, .post-title a:before {
-    content: none;
-  }
-  .post-meta {
-    margin-top: 0px;
-  }
-  #top-link-block.affix {
-    position: fixed;
-    bottom: 5%;
-    right: 5%;
-  }
-  .well:hover, .well-sm:hover {
-    color: #1ABC9C;
-    background: transparent;
-    border: transparent;
   }
 }

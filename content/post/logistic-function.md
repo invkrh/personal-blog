@@ -100,14 +100,10 @@ You can find the **clue** in my next post. =)
 Normal distribution $N(\mu, \sigma)$:
 
 * PDF
-
-$$ f(x) = \frac{1}{\sigma\sqrt{2\pi}}exp\left(-\frac{(x - \mu)^2}{2\sigma^2}\right) $$
+  $$ f(x) = \frac{1}{\sigma\sqrt{2\pi}}exp\left(-\frac{(x - \mu)^2}{2\sigma^2}\right) $$
 
 * CDF
-
-$$ F(x) = \int_{-\infty}^{x} \frac{1}{\sigma\sqrt{2\pi}}exp\left(-\frac{(x - \mu)^2}{2\sigma^2}\right) dx $$
-
-$$\text{the integral can not be expressed in terms of elementary functions}$$
+  $$ F(x) = \int_{-\infty}^{x} \frac{1}{\sigma\sqrt{2\pi}}exp\left(-\frac{(x - \mu)^2}{2\sigma^2}\right) dx $$, where the integral can not be expressed in terms of elementary functions
 
 In statistic, one uses **error function** $erf(x)$ to estimate CDF of normal distribution:
 
