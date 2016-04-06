@@ -77,7 +77,14 @@ In statistics, a likelihood function (often simply the likelihood) is a function
 
 For example, given the parameters $\mathbf{w}$ and $b$, the likelihood of *one* point being *positive* is the following:
 
-$$L(\mathbf{w} \mid y \ \text{is positive,} \ \text{given} \ \mathbf{x}) = P(y \ \text{is positive} \mid \mathbf{x}, \mathbf{w}) = f(\mathbf{x}) = \frac{1}{1+ exp(-s)}$$
+{{<katex>}}
+\begin{array}{rl}
+& L(\mathbf{w} \mid y \ \text{is positive,} \ \text{given} \ \mathbf{x})\\
+= & P(y \ \text{is positive} \mid \mathbf{x}, \mathbf{w}) \\
+= & f(\mathbf{x}) \\
+= & \frac{1}{1+ exp(-s)}
+\end{array}
+{{</katex>}}
 
 , where $ s = \mathbf{w}^T \cdot \mathbf{x} + b$
 
@@ -116,12 +123,14 @@ For simplicity, we take the **natural logarithm** of both left and right hand si
 <div>
 $$
 \begin{array}{rl}
-\ln L(\mathbf{w};\mathbf{x}_i, y_i) & = \ln f(\mathbf{x}_i)^{y_i} \cdot [1-f(\mathbf{x}_i)]^{1-y_i}\\
-& = \ln f(\mathbf{x}_i)^{y_i} + \ln [1-f(\mathbf{x}_i)]^{1-y_i}\\
-& = y_i \ln f(\mathbf{x}_i) + (1-y_i) \ln[1-f(\mathbf{x}_i)] \\
-& = y_i \ln f(\mathbf{x}_i) + (1-y_i) \ln f(-\mathbf{x}_i) \\
-& = y_i \ln\left(\frac{1}{1 + exp(-(\mathbf{w}^T \cdot \mathbf{x}_i + b))}\right) + (1-y_i) \ln\left(\frac{1}{1 + exp(\mathbf{w}^T \cdot \mathbf{x}_i + b)}\right)\\
-& = - y_i \ln[1 + exp(-(\mathbf{w}^T \cdot \mathbf{x}_i + b))] - (1-y_i) \ln[1 + exp(\mathbf{w}^T \cdot \mathbf{x}_i + b)]
+& \ln L(\mathbf{w};\mathbf{x}_i, y_i) \\
+= & \ln f(\mathbf{x}_i)^{y_i} \cdot [1-f(\mathbf{x}_i)]^{1-y_i}\\
+= & \ln f(\mathbf{x}_i)^{y_i} + \ln [1-f(\mathbf{x}_i)]^{1-y_i}\\
+= & y_i \ln f(\mathbf{x}_i) + (1-y_i) \ln[1-f(\mathbf{x}_i)] \\
+= & y_i \ln f(\mathbf{x}_i) + (1-y_i) \ln f(-\mathbf{x}_i) \\
+= & y_i \ln\left(\frac{1}{1 + exp(-(\mathbf{w}^T \cdot \mathbf{x}_i + b))}\right) \\
+  & + (1-y_i) \ln\left(\frac{1}{1 + exp(\mathbf{w}^T \cdot \mathbf{x}_i + b)}\right)\\
+= & - y_i \ln[1 + exp(-(\mathbf{w}^T \cdot \mathbf{x}_i + b))] - (1-y_i) \ln[1 + exp(\mathbf{w}^T \cdot \mathbf{x}_i + b)]
 \end{array}
 $$
 </div>

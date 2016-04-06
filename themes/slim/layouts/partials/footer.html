@@ -43,7 +43,7 @@
   function resizeFormula() {
     var postWidth = $(".post-content").first().width();
     $('.katex-display .katex-html').each(function(i, formula) {
-      console.log("post width = " + postWidth);
+      // console.log("post width = " + postWidth);
       $(formula).width(postWidth * 0.9);
     });
   }

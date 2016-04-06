@@ -6,7 +6,7 @@ date: "2015-02-28"
 ---
 
 ## Problem:
-Given a number $n \in \mathbb{N}^*$, find $(a, b) \in \mathbb{N}^2$, such that
+Given a number $n \in \mathbb{N}^\*$, find $(a, b) \in \mathbb{N}^2$, such that
 
 {{<katex>}}
 \{ y \mid y = (ax + b) \% n, \quad x \in \{0,1, ..., n-1\} \} = \{0,1, ..., n-1\}
@@ -70,7 +70,7 @@ Finally, we need to prove the hypothesis we found.
 
 ## Hypothesis:
 
-Given a function $f(x) = (ax + b) \% n$, where $n \in \mathbb{N}^*$, $a,b \in \mathbb{N}$, $a$ and $n$ are co-prime
+Given a function $f(x) = (ax + b) \% n$, where $n \in \mathbb{N}^\*$, $a,b \in \mathbb{N}$, $a$ and $n$ are co-prime
 
 $\Longleftrightarrow$
 
@@ -78,11 +78,15 @@ $\nexists x_1, x_2 \in \{0, 1, .., n-1\}$, $x_1 \neq x_2$, such that $f(x_1) = f
 
 ## Demonstration:
 
-> Sufficiency:
+### Sufficiency:
 
-$\exists x_1, x_2 \in [0, n-1], x_1 \neq x_2$, such that $f(x_1) = f(x_2) \Rightarrow a$ and $n$ are *NOT* coprime
+$\exists x_1, x_2 \in [0, n-1], x_1 \neq x_2$, such that $f(x_1) = f(x_2)$
 
-* Proof:
+$\Rightarrow$
+
+$a$ and $n$ are *NOT* coprime
+
+#### Proof:
 
 {{<katex>}}
 \begin{array}{rcl}
@@ -103,7 +107,8 @@ Assume that $a$ and $n$ are co-prime. We know that $x_1 - x_2 \neq 0$ then
 \end{array}
 \right.
 $$
-{{</katex>}}, where $C \in \mathbf{N}^*$
+{{</katex>}}
+where $C \in \mathbb{N}^\*$
 
 Hence, $\mid x_1 - x_2 \mid \ge n$
 
@@ -113,11 +118,15 @@ Hence, the assumption is broken, then $a$ and $b$ are *NOT* co-prime.
 
 Sufficiency proved.
 
-> Necessity:
+### Necessity:
 
-$a$ and $n$ are *NOT* co-prime $\Rightarrow \exists x_1, x_2 \in {0,1,2, .., n-1}, x_1 \neq x_2$, such that $f(x_1) = f(x_2)$
+$a$ and $n$ are *NOT* co-prime
 
-* Proof:
+$\Rightarrow$
+
+$\exists x_1, x_2 \in {0,1,2, .., n-1}, x_1 \neq x_2$, such that $f(x_1) = f(x_2)$
+
+#### Proof:
 
 Since $a$ and $n$ are *not* co-prime, then $a$ and $n$ can be factorized by the common prime factor, denoted as $p$ :
 
@@ -130,76 +139,46 @@ n = p \cdot q^\prime
 \right.
 $$
 {{</katex>}}
-where $q, q^\prime \in \mathbb{N}^*$
+where $q, q^\prime$ are co-prime numbers $\in \mathbb{N}^\*$
 
-then, $ (ax + b)\% n = y \rightarrow \exists k \in \mathbb{Z}$, such that $ a \cdot x + b = n \cdot k + y$, where $y \in \{0,1,2, .. n-1\}$
+Note that $q^\prime$ is strict less than $n$
 
-can be rewritten as:
+By definition of modulo:
 
+$ f(x) = (ax + b)\% n \Rightarrow \exists k \in \mathbb{Z}$, such that $ a \cdot x + b = n \cdot k + f(x)$
+
+Then,
 {{<katex>}}
-p \cdot q \cdot x + b = p \cdot q^\prime \cdot k + y \Longleftrightarrow p \cdot (q \cdot x-q^\prime \cdot k) = y - b
+\begin{array}{ll}
+  & \left \{
+  \begin{array}{ll}
+  p q x_{1} + b = p q^\prime k + f(x1) \\
+  p q x_{2} + b = p q^\prime k^\prime + f(x2)
+  \end{array}
+  \right. \\
+  \Rightarrow & p q (x_1 - x_2) = p q^\prime (k - k^\prime) + f(x_1) - f(x_2)
+\end{array}  
 {{</katex>}}
 
-Since $b$ is a free nature number, for simplicity, we can assume that $b \in {0,1,2, .., n-1}$, then there must be a $y = b$, our proof is focused on that $y$, then we get:
+Since $f(x_1) = f(x_2)$, then
+$$ q (x_1 - x_2) = p q^\prime (k - k^\prime) $$
 
-$$
-q \cdot x-q^\prime \cdot k = 0
-$$
-
-Knowing that:
-
+Finally, we get:
 {{<katex>}}
 \left \{
-\begin{array}{ll}
-x \in \{0,1,2, .., n-1\}\\
-p < n \\
-q^\prime < n
-\end{array}
+  \begin{array}{rl}
+    \mid x_1 - x_2 \mid &=& C q^\prime \\
+    \mid k - k^\prime \mid &=& C q
+  \end{array}
 \right.
 {{</katex>}}
+, where $C \in \mathbb{N}^\*$
 
-, then there are two solution for $\{x, k\}$:
+Make $C=1$ and knowing that $x_1, x_2 \in \{ 0 .., n - 1\}$ and $q < n$, then:
 
-{{<katex>}}
-\left \{
-\begin{array}{ll}
-x = q^\prime\\
-k = q
-\end{array}
-\right.
-{{</katex>}}
+There must be a pair of $(x_1, x_2)$ makes $\mid x_1 - x_2 \mid = q^\prime$ holds.
 
-{{<katex>}}
-\left \{
-\begin{array}{ll}
-x = 0\\
-k = 0
-\end{array}
-\right.
-{{</katex>}}
-
-then $f(0) = f(q^\prime)$, which is what we want to prove.
-
-You may wonder what if $b \ge n$. Essentially, this case could be normalized to $b \in {0,1,2, .., n-1}$:
-
-{{<katex>}}
-\begin{array}{rcl}
-y & = & (a \cdot x + b) \% n = [(a \cdot x \% n) + (b \% n)] \% n \\
-&\Rightarrow& (a \cdot x \% n) + (b \% n) = k \cdot n + y \\
-&\Rightarrow& (a \cdot x - k^\prime \cdot n) + b \% n = k \cdot n + y \\
-&\Rightarrow& a \cdot x + b \% n = (k + k^\prime) \cdot n + y
-\end{array}
-{{</katex>}}
-
-, where $\quad k \in \mathbb{Z}, \quad k^\prime \in \mathbb{Z}$
-
-now for a given $y$, we can take a $b$ such that, $b \% n = y$, that leads to
-
-$$a \cdot x = k^{\prime\prime} \cdot n$$
-
-, where $k^{\prime\prime} = k + k^\prime$.
-
-This is what we just proved.
+($\mid k - k^\prime \mid = q$ obviously holds for some pair of $(k, k^\prime)$)
 
 Necessity proved.
 
