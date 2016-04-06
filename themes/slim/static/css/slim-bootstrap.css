@@ -146,8 +146,8 @@ hr {
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   display: block;
-  width: 150px;
-  margin: 1.5rem 0; }
+  /*margin: 1.5rem 0; */
+}
 
 button,
 .btn {
@@ -383,19 +383,6 @@ span.katex {
 
 .navbar .navbar-collapse {
   text-align: center;
-}
-
-.navbar-brand-centered {
-    position: absolute;
-    left: 50%;
-    display: block;
-    width: 160px;
-    text-align: center;
-    /*background-color: #eee;*/
-}
-.navbar>.container .navbar-brand-centered,
-.navbar>.container-fluid .navbar-brand-centered {
-    margin-left: -80px;
 }
 
 /* Large desktops and laptops */
