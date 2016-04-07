@@ -9,7 +9,7 @@ Logistic regression is usually used to classify points in a multi-dimensional sp
 
 Note that the target function has some unknown parameters, the learning process will find out these parameters by optimizing a **loss function** which could be defined by **likelihood**.
 
-Actually, there are two fashions of labeling points. One is (0, 1), the other is (-1, 1). 1 is always considered as positive, while the negatives could be 0 or -1. Both are fine, but we need to pay attention that the two different ways lead to different loss functions even if they share the same target function.
+Actually, there are two fashions of labeling points. One is (0, 1), the other is (-1, 1). 1 is always considered as positive while the negatives could be 0 or -1. Both are fine, but we need to pay attention that the two different ways lead to different loss functions even if they share the same target function.
 
 ## Target function
 
@@ -59,7 +59,7 @@ The logistic function has some beautiful properties which make it a good approxi
 * $$\lim_{s \to +\infty} \theta(s) = 1$$
 * $$\lim_{s \to -\infty} \theta(s) = 0$$
 
-Since logistic function is defined on $\mathbb{R}$ and the domain of the target function is $\mathbb{R}^d$, a transformation of $\mathbb{R}^d \to \mathbb{R}$ is carried out by taking the sum of weighted features, that's where the weights/parameters are introduced. This model is also called **linear model**, because $s$ is a linear combination of features.
+Since the logistic function is defined on $\mathbb{R}$ and the domain of the target function is $\mathbb{R}^d$, a transformation of $\mathbb{R}^d \to \mathbb{R}$ is carried out by taking the sum of weighted features, that's where the weights/parameters are introduced. This model is also called **linear model**, because $s$ is a linear combination of features.
 
 Hence, the target function is declared as :
 
@@ -67,7 +67,7 @@ $$f(x) = \frac{1}{1+ exp(-s)}$$
 
 , where $ s = \mathbf{w}^T \cdot \mathbf{x} + b$
 
-*You may have some questions on this. Why use logistic function? Where does it come from? why it can be interpreted as probability? then, what's the distribution? Don't worry, you will find all you would like to know in the following post. And in this post, we just focus on the loss function and take logistic function as granted.*
+*You may have some questions on this. Why use a logistic function? Where does it come from? why can it be interpreted as probability? then, what's the distribution? Don't worry, you will find all you would like to know in the following post. And in this post, we just focus on the loss function and take logistic function as granted.*
 
 ## Loss function
 
@@ -118,7 +118,7 @@ $$L(\mathbf{w};\mathbf{x}_i, y_i) = f(\mathbf{x}_i)^{y_i} \cdot [1-f(\mathbf{x}_
 
 , this is what we want to maximize.
 
-For simplicity, we take the **natural logarithm** of both left and right hand side, then
+For simplicity, we take the **natural logarithm** of both left and right-hand side, then
 
 <div>
 $$
@@ -164,7 +164,7 @@ $$L(\mathbf{w};\mathbf{x}_i, y_i) = f(y_i \cdot \mathbf{x}_i)$$
 
 , this is what we want to maximize.
 
-For simplicity, we take again the **natural logarithm** of both left and right hand side, then
+For simplicity, we take again the **natural logarithm** of both left and right-hand side, then
 
 <div>
 $$

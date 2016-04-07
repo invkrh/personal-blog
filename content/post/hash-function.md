@@ -15,7 +15,7 @@ Given a number $n \in \mathbb{N}^\*$, find $(a, b) \in \mathbb{N}^2$, such that
 
 Note that this is an equation between two set, so element's order is not important.
 
-For simplicity, mark the set on left hand side as set $A$, the right one as set $B$, so the equality becomes $\mid A \mid = \mid B \mid$
+For simplicity, mark the set on left-hand side as set $A$, the right one as set $B$, so the equality becomes $\mid A \mid = \mid B \mid$
 
 This makes the function $f(x) = (ax + b) \% n$ become a **perfect hashing function** which hashes the input $x$ to a set of integers, with *no* collision. Furthermore, since the modulo $n$ operation is used, then the domain and range are the *same*.
 
@@ -57,14 +57,13 @@ Obviously, $(7, 4)$ is a validate pair we are looking for. No collision found he
 (7, 5) &\rightarrow &f(x) = (7x + 5) \% 12 \\
 x = 0, 1, 2 .. 11 &\rightarrow &f(x) = 5, 0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10
 \end{array}
-$$
 {{</katex>}}
 
 Obviously, $(7, 5)$ is also a validate pair.
 
 After trying out a lot of possible $(a, b)$ pairs, I found that when $a$ and $n$ are **co-prime**. no matter what $b$ is, $(a, b)$ are validate pair.
 
-In addition, $b$ is not important in term of perfect hashing, but it is essential to generate further more distinct hash functions when $a$ is fixed. These functions just shift the sequence of the output w.r.t the fixed $a$, like in example 3. Randomly picking validate $a$ and $b$ gives a random sequence of output (pseudo random permutation).
+In addition, $b$ is not important in term of perfect hashing, but it is essential to generate furthermore distinct hash functions when $a$ is fixed. These functions just shift the sequence of the output w.r.t the fixed $a$, like in example 3. Randomly picking validate $a$ and $b$ gives a random sequence of output (pseudo random permutation).
 
 Finally, we need to prove the hypothesis we found.
 
@@ -94,7 +93,6 @@ f(x_1) = f(x_2) &\Rightarrow& (a\cdot x_1) \% n = (a\cdot x_2) \% n \\
 &\Rightarrow& a\cdot x_1 - k\cdot n = a\cdot x_2 - k^\prime \cdot n \\
 &\Rightarrow& a\cdot (x_1 - x_2) = (k - k^\prime) \cdot n
 \end{array}
-$$
 {{</katex>}}
 
 Assume that $a$ and $n$ are co-prime. We know that $x_1 - x_2 \neq 0$ then
@@ -106,7 +104,6 @@ Assume that $a$ and $n$ are co-prime. We know that $x_1 - x_2 \neq 0$ then
 \mid k - k^\prime \mid &=& C \cdot a
 \end{array}
 \right.
-$$
 {{</katex>}}
 where $C \in \mathbb{N}^\*$
 
@@ -137,11 +134,10 @@ a = p \cdot q \\
 n = p \cdot q^\prime
 \end{array}
 \right.
-$$
 {{</katex>}}
 where $q, q^\prime$ are co-prime numbers $\in \mathbb{N}^\*$
 
-Note that $q^\prime$ is strict less than $n$
+Note that $q^\prime$ is strictly less than $n$
 
 By definition of modulo:
 
@@ -174,7 +170,7 @@ Finally, we get:
 {{</katex>}}
 , where $C \in \mathbb{N}^\*$
 
-Make $C=1$ and knowing that $x_1, x_2 \in \{ 0 .., n - 1\}$ and $q < n$, then:
+Make $C=1$ and knowing that {{<inline>}}x_1, x_2 \in \{0 .., n - 1\}{{</inline>}} and $q < n$, then:
 
 There must be a pair of $(x_1, x_2)$ makes $\mid x_1 - x_2 \mid = q^\prime$ holds.
 
@@ -222,9 +218,9 @@ But, $f(1) = 2 \rightarrow a\cdot 1 = 4k + 2$ has no solution, since $a$ must be
 
 Hence, $f(1) \neq 2$.
 
-The lack of diversity is obvious when $n$ is a even number.
+The lack of diversity is obvious when $n$ is an even number.
 
-Even when $n$ is a odd number, the incompleteness still exists.
+Even when $n$ is an odd number, the incompleteness still exists.
 
 If we take a close at **case 2**, we find that
 
@@ -242,9 +238,9 @@ Hence, the function $f(x) = (ax +b)\%n$ can not generate all the possible sequen
 
 Let's take again the example $n=4$, $\{1, 3\}$ is validate step. So $n \cdot p == 4 \cdot 2 = 8$. As a result, for $n=4$, there are $\frac{8}{4!} = \frac{1}{3}$ distinct sequences can be reached by our hash function model.
 
-There are another hash function model can be used in order to get more distinct sequence:
+There is another hash function model can be used in order to get more distinct sequence:
 
-Given $n$, find the prime number $p$ which is bigger than $n$, then $a$ can be any number below $p$. Hence, the number of sequence distinct is $p^2 (\ge n^2)$. Note that the diversity is gained by loosing the constraint, because in this way, the function value can be any nature number between $0$ and $p$. It is not equivalent to permutation, but what's important is that it is a perfect hashing. That depends on your need. And in my [spark-LSH](https://github.com/invkrh/spark-LSH) project, such model is used in order to generate more min hash functions.
+Given $n$, find the prime number $p$ which is bigger than $n$, then $a$ can be any number below $p$. Hence, the number of sequence distinct is $p^2 (\ge n^2)$. Note that the diversity is gained by loosing the constraint, because, in this way, the function value can be any nature number between $0$ and $p$. It is not equivalent to permutation, but what's important is that it is a perfect hashing. That depends on your need. And in my [spark-LSH](https://github.com/invkrh/spark-LSH) project, such model is used in order to generate more min hash functions.
 
 This variant could be used where $n$ is not big enough to generate many hash functions than needed.
 
@@ -252,7 +248,7 @@ We can conclude that the incompleteness of sequence will exist for sure. In prac
 
 ## Use case
 
-Given a large amounts of sets where each set has lots of elements, Locality-Sensitive Hashing (LSH) is used to find same sets or similar sets quickly and accurately.
+Given large amounts of sets where each set has lots of elements, Locality-Sensitive Hashing (LSH) is used to find same sets or similar sets quickly and accurately.
 
 The whole data set can be represented as a matrix, where each column corresponds to a set and each row corresponds to a universal element of all sets.
 
@@ -264,7 +260,7 @@ What we do is use a min-hash function to hash a set to a signature. By hashing a
 
 The signature is created by permutation of rows, and for each column, take the row number of the first row where the value is 1.
 
-Actually, permutation all rows of a large matrix is very expensive. Instead, we create a hash function which takes a row number as input, and the output is a row number after permutation. It is obvious that the input and output are in the same range [0, # total rows -1], and even if the inputs are in order, the output can be in any order. This is exactly the functions we discussed in previous sections.
+Actually, permutation all rows of a large matrix are very expensive. Instead, we create a hash function which takes a row number as input, and the output is a row number after permutation. It is obvious that the input and output are in the same range [0, # total rows -1], and even if the inputs are in order, the output can be in any order. This is exactly the functions we discussed in previous sections.
 
 Given a total row number $n$, we just pick a random nature number $a$ which is co-prime to $n$, then the function is created easily:
 

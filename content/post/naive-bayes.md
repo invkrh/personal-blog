@@ -15,7 +15,7 @@ If apply Bayes' rule to posterior, we get:
 P(y \mid \mathbf{x}) = \frac{P(\mathbf{x} \mid y)P(y)}{P(\mathbf{x})}
 {{</katex>}}
 
-The modeling can happen on two side, left hand side leads to logistic regression, while the right hand side leads to naive Bayes.
+The modeling can happen on two sides, left-hand side leads to logistic regression while the right-hand side leads to naive Bayes.
 
 ## Binary Classification
 
@@ -60,7 +60,7 @@ f(\mathbf{x}) &= P(y=1 \mid \mathbf{x}) \\
 \space(*)
 {{</katex>}}
 
-The form is very like logistic form, if we make the following assumptions,
+The form is very like logistic form if we make the following assumptions,
 
 1)  
 
@@ -116,7 +116,7 @@ where $\theta$ and $\phi$ are the parameters ($\theta$ is known as the **locatio
 
 As a result, modeling $P(y\mid x)$ (or more precisely, $f(x)$) into a logistic function is a reasonable choice.
 
-If we now assume that each of out class-conditional densities are members of the (same) exponential family distribution, with equal dispersion parameters, and substitute this general form into Eq. (*), we find that we once again obtain a linear form for the discriminant $\xi$. Thus in all cases the posterior probability is a logistic function of a linear combination of the components of $\mathbf{x}$
+If we now assume that each of out class-conditional densities are members of the (same) exponential family distribution, with equal dispersion parameters, and substitute this general form into Eq. (*), we find that we once again obtain a linear form for the discriminant $\xi$. Thus, in all cases the posterior probability is a logistic function of a linear combination of the components of $\mathbf{x}$
 
 > For naive Bayes aspect
 
@@ -187,21 +187,21 @@ Naive Bayes rule is essentially based on $P(\mathbf{x} \mid y)$ and $P(y)$, no a
 
 ## What we have learned so far:
 
-Logistic representation is invariant to a *family* of classification problems; those in which the class-conditional densities are in the exponential family (with equal dispersion parameters). In other words, we don't require a particular distribution to be specified when we use logistic function. The naive Bayes method, on the other hand, does require such a specification. If the specification isn't a good match to the data set, performance will suffer. In statistical language, logistic regression is more *robust* than naive Bayes classification. Another advantage of logistic regression is that its parameterization is simpler than that of naive Bayes ($\mathcal{O}(p)$ vs. $\mathcal{O}(pk)$).
+Logistic representation is invariant to a *family* of classification problems; those in which the class-conditional densities are in the exponential family (with equal dispersion parameters). In other words, we don't require a particular distribution to be specified when we use a logistic function. The naive Bayes method, on the other hand, does require such a specification. If the specification isn't a good match to the data set, performance will suffer. In statistical language, logistic regression is more *robust* than naive Bayes classification. Another advantage of logistic regression is that its parameterization is simpler than that of naive Bayes ($\mathcal{O}(p)$ vs. $\mathcal{O}(pk)$).
 
-Naive Bayes is more "modular" than logistic regression. The class-conditional densities are likely to be local, characteristic functions of the objects being classified, invariant to the nature an d number of the other classes.
+Naive Bayes is more "modular" than logistic regression. The class-conditional densities are likely to be local, characteristic functions of the objects being classified, invariant to nature and a number of the other classes.
 
-Neither method is inherently better, they are two sides of the same coin and have complementary advantages and disadvantages. From a purely probabilistic point of view the two methods are equivalent parameterizations of the joint density. They are *not* equivalent, however, from a statistical point of view, and in particular situations statistical considerations, in conjunction with considerations such as modularity, stability, prototypicality, causality, etc., may lead one to prefer one over the other. The major statistical advantage of naive Bayes  is that if the model specification is nearly correct, the estimation in that method will be more *efficient* than estimation in logistic regression (will require fewer data points to obtain a given level of statistical accuracy). The statistical advantage of logistic regression, on the other hand, is that it is more *robust* to uncertainty about the data generation process.
+Neither method is inherently better, they are two sides of the same coin and have complementary advantages and disadvantages. From a purely probabilistic point of view, the two methods are equivalent parameterizations of the joint density. They are *not* equivalent, however, from a statistical point of view, and in particular situations, statistical considerations, in conjunction with considerations such as modularity, stability, prototypicality, causality, etc., may lead one to prefer one over the other. The major statistical advantage of naive Bayes  is that if the model specification is nearly correct, the estimation in that method will be more *efficient* than estimation in logistic regression (will require fewer data points to obtain a given level of statistical accuracy). The statistical advantage of logistic regression, on the other hand, is that it is more *robust* to uncertainty about the data generation process.
 
-*Some extension to binary classification, can be multi-class or non-linear transformation form of discriminant. The same analysis will still work.*
+*Some extension to binary classification, can be multi-class or non-linear transformation form of the discriminant. The same analysis will still work.*
 
 ## Ending
 
 To summarize, logistic regression directly estimates the parameters of $P(y \mid \mathbf{x})$, whereas Naive Bayes directly estimates parameters for $P(\mathbf{x} \mid y)$ and $P(y)$. We often call the former a discriminative classifier, and the latter a generative classifier.
 
-When the Gaussian Naive Bayes(GNB) modeling assumptions do not hold, Logistic Regression(LR) and GNB typically learn different classifier functions In this case, the asymptotic (as the number of training examples approach infinity) classification accuracy for LR is ofter better than th asymptotic accuracy of GNB. Although LR is consistent with the NB assumption that input feature $x_i$ are conditionally independent given $y$, it is not rigidly tied to this assumption as is NB. Given data that disobeys this assumption, the conditional likelihood maximization algorithm for LR will adjust its parameters to maximize the fit to (the conditional likelihood of) the data, even if the resulting parameters are inconsistent with Naive Bayes parameter estimates.
+When the Gaussian Naive Bayes(GNB) modeling assumptions do not hold, Logistic Regression(LR) and GNB typically learn different classifier functions, In this case, the asymptotic (as the number of training examples approach infinity) classification accuracy for LR is ofter better than the asymptotic accuracy of GNB. Although LR is consistent with the NB assumption that input features $x_i$ are conditionally independent given $y$, it is not rigidly tied to this assumption as is NB. Given data that disobeys this assumption, the conditional likelihood maximization algorithm for LR will adjust its parameters to maximize the fit to (the conditional likelihood of) the data, even if the resulting parameters are inconsistent with Naive Bayes parameter estimates.
 
-One thing that I didn't mentioned in this post is that, essentially, GNB and LR converge toward their asymptotic accuracies at different rates. You can find more details in [2].
+One thing that I didn't mention in this post is that, essentially, GNB and LR converge toward their asymptotic accuracies at different rates. You can find more details in [2].
 
 ## Bibliography
 
