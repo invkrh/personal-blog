@@ -3,10 +3,10 @@ html {
   font-size: 100%;
  }
 
-/**,
+*,
 *:before,
 *:after {
-  box-sizing: inherit; }*/
+  box-sizing: inherit; }
 
 body {
   margin: 0; }
@@ -99,17 +99,16 @@ em {
   text-emphasis-position: under; }
 
 code {
-   padding: 2px 4px;
    color: #d14;
    background-color: #f7f7f9;
    border: 1px solid #e1e1e8;
    padding: 3px 3px 1px 3px;
    font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
-   font-size: 15px;
-   /*-webkit-border-radius: 3px;
+   font-size: 16px;
+   -webkit-border-radius: 3px;
    -moz-border-radius: 3px;
    -ms-border-radius: 3px;
-   -o-border-radius: 3px;*/
+   -o-border-radius: 3px;
    border-radius: 3px;
 }
 
@@ -385,6 +384,19 @@ span.katex {
   text-align: center;
 }
 
+/*
+body > :not(.pace),body:before,body:after {
+  -webkit-transition:opacity .4s ease-in-out;
+  -moz-transition:opacity .4s ease-in-out;
+  -o-transition:opacity .4s ease-in-out;
+  -ms-transition:opacity .4s ease-in-out;
+  transition:opacity .4s ease-in-out
+}
+
+body:not(.pace-done) > :not(.pace),body:not(.pace-done):before,body:not(.pace-done):after {
+  opacity:0
+}*/
+
 /* Large desktops and laptops */
 @media (min-width: 1200px) {
   body {font-size: 20px;}
@@ -413,6 +425,10 @@ span.katex {
 }
 
 @media (max-width: 991px) {
+  .pace {
+    visibility: hidden;
+  }
+
   .post-title:after {
     content: none;
   }
