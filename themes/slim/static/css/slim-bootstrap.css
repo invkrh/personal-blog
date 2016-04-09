@@ -116,22 +116,24 @@ pre {
   display: block;
   margin-top: 0;
   margin-bottom: 1rem;
-  padding: 1rem;
-  font-size: 0.8rem;
+  padding: 3px;
+  font-size: 15px;
   line-height: 1.4;
   white-space: pre;
   white-space: pre-wrap;
   word-break: break-all;
   word-wrap: break-word;
-  background-color: #f9f9f9; }
+  background-color: #f9f9f9;
+}
 
 pre code {
   font-family: 'Source Code Pro', Menlo, Monaco, Courier, monospace;
-  font-size: 0.7rem;
+  font-size: 15px;
   padding: 0;
   color: inherit;
   background-color: transparent;
-  border: none; }
+  border: none;
+}
 
 blockquote {
   padding: 0.5rem 1rem;

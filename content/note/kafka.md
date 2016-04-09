@@ -55,9 +55,11 @@ title: Kafka Learning Note
 * subscribe() a subject
 
 
+
+
 ### Producer
 * 4 nodes in the cluster
-* `unclean.leader.election.enable=false` in the brokers configuration
+* set ` unclean.leader.election.enable` to `false` in the brokers configuration
 * replication factor for the topics – 3
 * `min.insync.replicas=2` property in topic configuration
 * `ack=all` property in the producer configuration
@@ -65,8 +67,7 @@ title: Kafka Learning Note
 
 A typical scenario would be to create a topic with a replication factor of 3, set `min.insync.replicas` to 2, and produce with `request.required.acks` of -1. This will ensure that the producer raises an exception if a majority of replicas do not receive a write.
 
-`unclean.leader.election.enable=false`
-Indicates whether to enable replicas not in the ISR set to be elected as leader as a last resort, even though doing so may result in data loss
+Setting `unclean.leader.election.enable` to `false` indicates whether to enable replicas not in the ISR set to be elected as leader as a last resort, even though doing so may result in data loss
 
 `replica.lag.max.messages`
 `replica.lag.time.max.ms`
