@@ -28,6 +28,7 @@ textarea {
   margin: 0; }
 
 table {
+  white-space: nowrap;
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
@@ -57,30 +58,30 @@ h6 {
   color: #000000;
   font-weight: 700;
   line-height: 1.25;
-  margin-bottom: 1.75rem;
+  margin: 2rem 0 1.75rem;
   font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, Serif;
 }
 
 h1 {
-  font-size: 1.8rem; }
+  font-size: 2rem; }
 
 h2 {
-  font-size: 1.5rem; }
+  font-size: 1.8rem; }
 
 h3 {
-  font-size: 1.25rem; }
+  font-size: 1.5rem; }
 
 h4,
 h5,
 h6 {
-  font-size: 1rem; }
+  font-size: 1.25rem; }
 
 p,
 dl,
 ol,
-ul {
+ul, ol ul {
   margin-top: 0;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.0rem;
 }
 
 a {
@@ -187,22 +188,15 @@ button,
 }
 
 .site-title {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
   margin-top: 40px;
   margin-bottom: 10px;
  }
-  .site-title a {
-    color: #333; }
 
-.site-info {
-  overflow: hidden; /* make height non zero, since col is floating */
+.site-title a {
+  color: #333;
 }
-
-.intro, .social-bar {
-  padding-top: 10px;
-}
-
 
 /* Remove underscore for links */
 .social-bar a:hover {
@@ -460,6 +454,12 @@ body:not(.pace-done) > :not(.pace),body:not(.pace-done):before,body:not(.pace-do
     overflow-y: hidden;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    white-space: nowrap;
+    display: block;
+    overflow-x: auto;
   }
 
   /* Make scrollbar visible */
