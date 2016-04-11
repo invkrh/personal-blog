@@ -5,7 +5,7 @@ categories: [number theory, machine learning]
 date: "2015-02-28"
 ---
 
-## Problem:
+### Problem:
 Given a number $n \in \mathbb{N}^\*$, find $(a, b) \in \mathbb{N}^2$, such that
 
 {{<katex>}}
@@ -23,7 +23,7 @@ This makes the function $f(x) = (ax + b) \% n$ become a **perfect hashing functi
 f: \{0,1, .., n-1\} \rightarrow \{0,1, .., n-1\}
 {{</katex>}}
 
-## Example:
+### Example:
 Given $n = 12$
 
 1.
@@ -67,7 +67,7 @@ In addition, $b$ is not important in term of perfect hashing, but it is essentia
 
 Finally, we need to prove the hypothesis we found.
 
-## Hypothesis:
+### Hypothesis:
 
 Given a function $f(x) = (ax + b) \% n$, where $n \in \mathbb{N}^\*$, $a,b \in \mathbb{N}$, $a$ and $n$ are co-prime
 
@@ -75,9 +75,9 @@ $\Longleftrightarrow$
 
 $\nexists x_1, x_2 \in \{0, 1, .., n-1\}$, $x_1 \neq x_2$, such that $f(x_1) = f(x_2)$ (no collision, perfect hashing)
 
-## Demonstration:
+### Demonstration:
 
-### Sufficiency:
+#### Sufficiency:
 
 $\exists x_1, x_2 \in [0, n-1], x_1 \neq x_2$, such that $f(x_1) = f(x_2)$
 
@@ -85,7 +85,7 @@ $\Rightarrow$
 
 $a$ and $n$ are *NOT* coprime
 
-#### Proof:
+##### Proof:
 
 {{<katex>}}
 \begin{array}{rcl}
@@ -115,7 +115,7 @@ Hence, the assumption is broken, then $a$ and $b$ are *NOT* co-prime.
 
 Sufficiency proved.
 
-### Necessity:
+#### Necessity:
 
 $a$ and $n$ are *NOT* co-prime
 
@@ -123,7 +123,7 @@ $\Rightarrow$
 
 $\exists x_1, x_2 \in {0,1,2, .., n-1}, x_1 \neq x_2$, such that $f(x_1) = f(x_2)$
 
-#### Proof:
+##### Proof:
 
 Since $a$ and $n$ are *not* co-prime, then $a$ and $n$ can be factorized by the common prime factor, denoted as $p$ :
 
@@ -180,7 +180,7 @@ Necessity proved.
 
 Q.E.D.
 
-## Diversity analysis
+### Diversity analysis
 
 If we just want to find *one* perfect hashing function, it is true that $a$ could just be any prime number which is not a prime factor of $n$.
 
@@ -246,7 +246,7 @@ This variant could be used where $n$ is not big enough to generate many hash fun
 
 We can conclude that the incompleteness of sequence will exist for sure. In practice, as $n$ a large number, the generated distinct sequences are already enough. Even if it is not complete, we can still do the right thing.
 
-## Use case
+#### Use case
 
 Given large amounts of sets where each set has lots of elements, Locality-Sensitive Hashing (LSH) is used to find same sets or similar sets quickly and accurately.
 

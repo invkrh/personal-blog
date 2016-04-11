@@ -7,7 +7,7 @@ date: "2015-04-28"
 
 In logistic regression, we take advantage of logistic function to interpret the probability of a data point being a certain label. It seems that we take the logistic function as granted. In this post, I will try to tell some interesting things(at least for me) about logistic function and why it is chosen to be used in classification.
 
-## Long Long ago ...
+### Long Long ago ...
 
 A Brussels mathematician gave a common model of population growth. He found that the rate of reproduction is proportional to both the existing population and a number of available resources. The differential equation is the following:
 
@@ -46,7 +46,7 @@ $$y = \frac{1}{1+exp(-x)}$$
 
 Yes, the logistic function I have met before.
 
-## Probability & Distribution
+### Probability & Distribution
 
 In logistic regression, we map features to a probability by using a logistic function. It works because the logistic function is a **Cumulative Distribution Function (CDF)**.
 
@@ -96,7 +96,7 @@ In fact, we can never guess the CDF of the distribution by trying a different ki
 
 You can find the **clue** in my next post. =)
 
-## Appendices
+### Appendices
 
 Normal distribution $N(\mu, \sigma)$:
 

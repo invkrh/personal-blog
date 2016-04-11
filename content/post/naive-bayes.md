@@ -17,7 +17,7 @@ P(y \mid \mathbf{x}) = \frac{P(\mathbf{x} \mid y)P(y)}{P(\mathbf{x})}
 
 The modeling can happen on two sides, left-hand side leads to logistic regression while the right-hand side leads to naive Bayes.
 
-## Binary Classification
+### Binary Classification
 
 Let's take a look in the most simple case: binary classification.
 
@@ -185,7 +185,7 @@ Once all the parameters are estimated, for a given data point, we can know about
 
 Naive Bayes rule is essentially based on $P(\mathbf{x} \mid y)$ and $P(y)$, no assumption is made on $P(y \mid \mathbf{x})$.
 
-## What we have learned so far:
+### What we have learned so far:
 
 Logistic representation is invariant to a *family* of classification problems; those in which the class-conditional densities are in the exponential family (with equal dispersion parameters). In other words, we don't require a particular distribution to be specified when we use a logistic function. The naive Bayes method, on the other hand, does require such a specification. If the specification isn't a good match to the data set, performance will suffer. In statistical language, logistic regression is more *robust* than naive Bayes classification. Another advantage of logistic regression is that its parameterization is simpler than that of naive Bayes ($\mathcal{O}(p)$ vs. $\mathcal{O}(pk)$).
 
@@ -195,7 +195,7 @@ Neither method is inherently better, they are two sides of the same coin and hav
 
 *Some extension to binary classification, can be multi-class or non-linear transformation form of the discriminant. The same analysis will still work.*
 
-## Ending
+### Ending
 
 To summarize, logistic regression directly estimates the parameters of $P(y \mid \mathbf{x})$, whereas Naive Bayes directly estimates parameters for $P(\mathbf{x} \mid y)$ and $P(y)$. We often call the former a discriminative classifier, and the latter a generative classifier.
 
@@ -203,7 +203,7 @@ When the Gaussian Naive Bayes(GNB) modeling assumptions do not hold, Logistic Re
 
 One thing that I didn't mention in this post is that, essentially, GNB and LR converge toward their asymptotic accuracies at different rates. You can find more details in [2].
 
-## Bibliography
+### Bibliography
 
 [[1](/pdf/whylogistic.pdf)] Jordan, Michael I. "Why the logistic function? A tutorial discussion on probabilities and neural networks." (1995).
 

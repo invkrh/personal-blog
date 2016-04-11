@@ -11,7 +11,7 @@ Note that the target function has some unknown parameters, the learning process 
 
 Actually, there are two fashions of labeling points. One is (0, 1), the other is (-1, 1). 1 is always considered as positive while the negatives could be 0 or -1. Both are fine, but we need to pay attention that the two different ways lead to different loss functions even if they share the same target function.
 
-## Target function
+### Target function
 
 In logistic regression, the target function $f(\mathbf{x})$ gives the probability of the label being positive or negative given $\mathbf{x}$ (the feature of the point) which is known as posterior, it can be represented as :
 
@@ -69,7 +69,7 @@ $$f(x) = \frac{1}{1+ exp(-s)}$$
 
 *You may have some questions on this. Why use a logistic function? Where does it come from? why can it be interpreted as probability? then, what's the distribution? Don't worry, you will find all you would like to know in the following post. And in this post, we just focus on the loss function and take logistic function as granted.*
 
-## Loss function
+### Loss function
 
 By taking the advantage of the form of the target function, we can easily deduce the to loss function by defining the likelihood of **(0,1) case** and **(-1, 1) case**.
 
@@ -97,7 +97,7 @@ Two things need to be done:
 1. Define the likelihood of one point by unifying $P(y \mid \mathbf{x})$ (combine the two branches of posterior)
 2. Take the average natural logarithm likelihood over all the data points as the global likelihood
 
->### (0, 1) label
+>#### (0, 1) label
 
 In this case, $1$ stands for positive, while $0$ stands for negative.
 
@@ -143,7 +143,7 @@ We will just *minimize* the loss function to estimate the weights $\mathbf{w}$ a
 
 Note that: maximizing likelihood is equivalent to minimizing loss
 
->### (-1, 1) label
+>#### (-1, 1) label
 
 In this case, $1$ stands for positive, while $-1$ stands for negative.
 
