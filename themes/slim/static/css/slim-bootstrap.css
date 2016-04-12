@@ -58,11 +58,11 @@ h6 {
   color: #000000;
   font-weight: 700;
   line-height: 1.25;
-  margin: 2rem 0 1.75rem;
+  margin: 2rem 0 1.25rem;
   font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, Serif;
 }
 
-h1 {
+/*h1 {
   font-size: 2rem; }
 
 h2 {
@@ -74,15 +74,16 @@ h3 {
 h4,
 h5,
 h6 {
-  font-size: 1.25rem; }
+  font-size: 1.25rem; }*/
 
-p,
+/*p,
 dl,
 ol,
-ul, ol ul {
+ul, ol ul
+{
   margin-top: 0;
   margin-bottom: 1.0rem;
-}
+}*/
 
 a {
   color: #2980b9;
@@ -96,8 +97,10 @@ strong {
 }
 
 em {
-  text-emphasis-style: circle;
-  text-emphasis-position: under; }
+  color: #000000;
+  /*text-emphasis-style: circle;
+  text-emphasis-position: under; */
+}
 
 code {
    color: #d14;
@@ -195,7 +198,7 @@ button,
  }
 
 .site-title a {
-  color: #333;
+  color: #000;
 }
 
 /* Remove underscore for links */
@@ -396,24 +399,24 @@ body:not(.pace-done) > :not(.pace),body:not(.pace-done):before,body:not(.pace-do
 
 /* Large desktops and laptops */
 @media (min-width: 1200px) {
-  body {font-size: 20px;}
+  body {font-size: 18px;}
 }
 
 /* Landscape tablets and medium desktops */
 @media (min-width: 992px) and (max-width: 1199px) {
 /*@media (min-width: 992px) {*/
-  body {font-size: 19px;}
+  body {font-size: 17px;}
 }
 
 /* Portrait tablets and small desktops */
 @media (min-width: 768px) and (max-width: 991px) {
 /*@media (min-width: 768px) {*/
-  body {font-size: 18px;}
+  body {font-size: 17px;}
 }
 
 /* Landscape phones and portrait tablets */
 @media (max-width: 767px) {
-  body {font-size: 17px;}
+  body {font-size: 16px;}
 }
 
 /* Portrait phones and smaller */
