@@ -1,5 +1,5 @@
 ---
-title: Kafka Learning Note
+title: Kafka Learning Notes
 ---
 
 ### Consumer
