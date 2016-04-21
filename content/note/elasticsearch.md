@@ -291,3 +291,40 @@ title: Elasticsearch Learning Notes
       }
     }
   ```
+
+## Mapping
+
+`Mapping type` contains:
+- Meta-fields
+- Fields (properties)
+
+### Field datatypes
+* A string field could be indexed as an analyzed field for full-text search, and as a not_analyzed field for sorting or aggregations.
+* You could index a string field with the standard analyzer, the english analyzer, and the french analyzer.
+* Existing type and field mappings cannot be updated. Changing the mapping would mean invalidating already indexed documents. Instead, you should create a new index with the correct mappings and reindex your data into that index.
+
+* Fields with:
+  - the same name
+  - in the same index
+  - in different mapping types
+  - map to the same field internally,
+  - and **must have the same mapping**.
+
+* Analyser:
+  - This analysis process needs to happen not just at index time, but also at query time: the query string needs to be passed through the same (or a similar) analyzer so that the terms that it tries to find are in the same format as those that exist in the index.
+
+  Notes:
+  Analyzers can be specified per-query, per-field or per-index. At index time, Elasticsearch will look for an analyzer in this order:
+
+  * The analyzer defined in the field mapping.
+  * An analyzer named default in the index settings.
+  * The standard analyzer.
+    
+  At query time, there are a few more layers:
+
+  * The analyzer defined in a full-text query.
+  * The search_analyzer defined in the field mapping.
+  * The analyzer defined in the field mapping.
+  * An analyzer named default_search in the index settings.
+  * An analyzer named default in the index settings.
+  * The standard analyzer.
