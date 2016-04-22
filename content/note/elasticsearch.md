@@ -2,7 +2,7 @@
 title: Elasticsearch Learning Notes
 ---
 
-# Basics
+## Basics
 
 * Data Hirarchy: `index`/`type`/`document`
 * one index = * shards (partition)
@@ -16,13 +16,13 @@ title: Elasticsearch Learning Notes
   - The number of shards and replicas can be defined per index **at the time the index is created**. After the index is created, you may change the number of replicas dynamically anytime but **you cannot change the number shards after-the-fact**
   - By default: 5 primary shards and 1 replicas per primary shard (10 shards in all)
   
-# Command List
+## Command List
 
-## Pattern
+### Pattern
   ```bash
   curl -X<REST Verb> <Node>:<Port>/<Index>/<Type>/<ID>
   ```
-## Info
+### Info
 * Show health 
   ```bash
   curl 'localhost:9200/_cat/health?v'
@@ -125,7 +125,7 @@ title: Elasticsearch Learning Notes
   curl -XPOST 'localhost:9200/bank/account/_bulk?pretty' --data-binary "@accounts.json"
   ```
 
-## Search
+### Search
 
 * Basic
   ```bash
@@ -294,6 +294,26 @@ title: Elasticsearch Learning Notes
 
 ## Mapping
 
+Each document in an index has a type. Every type has its own mapping, or schema definition. A mapping defines the fields within a type, the datatype for each field, and how the field should be handled by Elasticsearch. A mapping is also used to configure metadata associated with the type.
+
+The two most important mapping attributes for string fields are index and analyzer
+* index
+
+  The index attribute controls how the string will be indexed. It can contain one of three values:
+
+  - analyzed
+  First analyze the string and then index it. In other words, index this field as full text.
+  
+  - not_analyzed
+  Index this field, so it is searchable, but index the value exactly as specified. Do not analyze it.
+  
+  - no
+  Don’t index this field at all. This field will not be searchable.
+
+* analyzer
+
+  For analyzed string fields, use the analyzer attribute to specify which analyzer to apply both at search time and at index time. By default, Elasticsearch uses the standard analyzer, but you can change this by specifying one of the built-in analyzers, such as whitespace, simple, or english:
+
 `Mapping type` contains:
 - Meta-fields
 - Fields (properties)
@@ -328,3 +348,38 @@ title: Elasticsearch Learning Notes
   * An analyzer named default_search in the index settings.
   * An analyzer named default in the index settings.
   * The standard analyzer.
+  
+## Analysis and Analyzers
+
+### Analysis
+
+* First, tokenizing a block of text into individual terms suitable for use in an inverted index,
+* Then normalizing these terms into a standard form to improve their “searchability,” or recall
+
+### Analyzers
+
+* Character filters
+
+  First, the string is passed through any character filters in turn. Their job is to tidy up the string before tokenization. A character filter could be used to strip out HTML, or to convert & characters to the word and.
+* Tokenizer
+
+  Next, the string is tokenized into individual terms by a tokenizer. A simple tokenizer might split the text into terms whenever it encounters whitespace or punctuation.
+* Token filters
+
+  Last, each term is passed through any token filters in turn, which can change terms (for example, lowercasing Quick), remove terms (for example, stopwords such as a, and, the) or add terms (for example, synonyms like jump and leap).
+
+**Notes:**
+when we search on a full-text field, we need to pass the query string through the same analysis process, to ensure that we are searching for terms in the same form as those that exist in the index.
+
+## Things to remember
+
+the biggest difference is between fields that represent exact values (which can include string fields) and fields that represent full text. This distinction is really important—it’s the thing that separates a search engine from all other databases.
+
+Data in Elasticsearch can be broadly divided into two types: exact values and full text.
+
+* Exact values are exactly what they sound like. Examples are a date or a user ID, but can also include exact strings such as a username or an email address. The exact value Foo is not the same as the exact value foo. The exact value 2014 is not the same as the exact value 2014-09-15.
+
+* Full text, on the other hand, refers to textual data—usually written in some human language — like the text of a tweet or the body of an email.
+
+You can find only terms that exist in your index, so both the indexed text and the query string must be normalized into the same form. This process of tokenization and normalization is called analysis.
+
