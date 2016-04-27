@@ -125,6 +125,16 @@ title: Elasticsearch Learning Notes
   curl -XPOST 'localhost:9200/bank/account/_bulk?pretty' --data-binary "@accounts.json"
   ```
 
+* Get Mapping
+  ```bash
+  curl -XGET 'http://localhost:9200/<index>/_mapping/<type>'
+  ```
+
+* Push Mapping
+  ```bash
+  curl -XPUT 'http://localhost:9200/<index>/_mapping/<type>' -d @mapping.json
+  ```
+
 ### Search
 
 * Basic
