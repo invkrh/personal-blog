@@ -15,7 +15,7 @@
     {{ if .Params.tags }}
     <span class="visible-md visible-lg post-tags">
 			{{ range .Params.tags }}
-				<a href="/tags/{{ . | urlize }}">#{{ . }}</a>
+				<a href="/tags/{{ . | urlize }}">#{{ title . }}</a>
 			{{ end }}
     </span>
     <span class="visible-xs visible-sm post-tags">
