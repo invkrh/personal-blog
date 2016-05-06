@@ -34,7 +34,7 @@ title: Jupyter Guide
   }
   ```
 
-Make sure the python of `anaconda` is used, thus we can import lots of anaconda package on-site.
+Make sure `python` of `anaconda` version is used, thus we can import lots of anaconda package on-site.
 
 More details [here](http://jupyter-client.readthedocs.io/en/latest/kernels.html#kernelspecs)
 
