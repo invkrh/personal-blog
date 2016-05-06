@@ -155,7 +155,22 @@ title: Elasticsearch Learning Notes
 
   **Notes:**
   Elasticsearch is completely done with the request and does not maintain any kind of server-side resources or open cursors into your results.
+  
+  There are some difference between URI search and json query search, the following queries do the same thing, except for the first one, you need to encode URI for special character, like in french: à, é, ç, è, ù, ô, etc.
+  
+  ```bash
+  curl -XGET 'localhost:9200/platform_test/ad_master/_search?analyzer=french&q=body:d%C3%A9corer&pretty'
 
+  curl -XGET 'localhost:9200/platform_test/ad_master/_search?pretty' -d '
+  {
+    "query": {
+      "query_string": {
+        "query": "body:décorer"
+      }
+    }
+  }'
+  ```
+  
 * Instead of returning the full document, selection fields needed is possible via `_source`
   ```bash
   curl -XPOST 'localhost:9200/bank/_search?pretty' -d '
