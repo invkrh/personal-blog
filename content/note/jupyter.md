@@ -9,9 +9,32 @@ title: Jupyter Guide
 * Install jupyter
 * `python -m IPython kernelspec install-self --user`
 * Check out jupyter kerel list `jupyter kernelspec list`
+  ```bash
+  $ jupyter kernelspec list
+  Available kernels:
+  python3    /home/invkrh/lib/anaconda3/lib/python3.5/site-packages/ipykernel/resources
+  
+  $ jupyter kernelspec install-self --user
+  
+  $ jupyter kernelspec list
+  Available kernels:
+  python3    /home/invkrh/.local/share/jupyter/kernels/python3
+  
+  $ cat /home/invkrh/.local/share/jupyter/kernels/python3/kernel.json
+  {
+     "display_name": "Python 3",
+     "language": "python",
+     "argv": [
+        "/home/invkrh/lib/anaconda3/bin/python",
+        "-m",
+        "ipykernel",
+        "-f",
+        "{connection_file}"
+       ]
+  }
+  ```
 
-**Note:**
-The last step is important, since it replaces python with the python from the conda env.
-I think this will make the IPython kernel launch in that env's Python.
+Make sure the python of `anaconda` is used, thus we can import lots of anaconda package on-site.
+
 More details [here](http://jupyter-client.readthedocs.io/en/latest/kernels.html#kernelspecs)
 
