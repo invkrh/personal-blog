@@ -8,9 +8,9 @@ paginate: 10
 
 menu:
   main:
-    - Name: "Home"
-      URL: "/"
-      weight: 1
+    # - Name: "Home"
+    #   URL: "/"
+    #   weight: 1
     - Name: "Archives"
       URL: "/post/"
       weight: 2

@@ -33,7 +33,7 @@
             <li>
         </ul>
         <hr class="visible-xs-*">
-        <ul class="navbar-left nav navbar-nav">
+        <ul class="navbar nav navbar-nav">
           {{ range .Site.Menus.main }}
           <li>
             <a class="navbar-text" href="{{ .URL }}">{{ .Name }}</a>
@@ -43,19 +43,6 @@
       </div>
     </div>
   </nav>
-
-  <!-- <div class="pull-right dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-      <span class="glyphicon glyphicon-menu-hamburger"></span>
-    </button>
-    <ul class="dropdown-menu">
-      {{ range .Site.Menus.main }}
-      <li>
-        <a href="{{ .URL }}">{{ .Name }}</a>
-      </li>
-      {{end}}
-    </ul>
-  </div> -->
 
   <div class="row">
     <h1 class="col-xs-12 site-title">
