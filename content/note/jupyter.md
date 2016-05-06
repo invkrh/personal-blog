@@ -14,7 +14,7 @@ title: Jupyter Guide
   Available kernels:
   python3    /home/invkrh/lib/anaconda3/lib/python3.5/site-packages/ipykernel/resources
   
-  $ jupyter kernelspec install-self --user
+  $ jupyter kernelspec install-self --user # alternative: python -m ipykernel.kernelspec
   
   $ jupyter kernelspec list
   Available kernels:
