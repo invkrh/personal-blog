@@ -66,6 +66,7 @@ ipython kernel install --user
 
 * Remove env
 ```bash
+source deactivate
 conda remove --name py27 --all
 ```
 
