@@ -49,7 +49,7 @@ The idea here is to install multiple ipython kernels. Here are instructions for 
 * Configure the python2.7 environment:
 
 ```bash
-conda create -n py27 python=2.7
+conda create -n py27 python=2.7 anaconda
 source activate py27
 conda install notebook ipykernel
 ipython kernel install --user
@@ -58,10 +58,15 @@ ipython kernel install --user
 * Configure the python3.5 environment:
 
 ```bash
-conda create -n py35 python=3.5
+conda create -n py35 python=3.5 anaconda
 source activate py35
 conda install notebook ipykernel
 ipython kernel install --user
+```
+
+* Remove env
+```bash
+conda remove --name py27 --all
 ```
 
 After that you should be able to choose between python2 and python3 when creating a new notebook in the interface.
