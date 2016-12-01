@@ -4,26 +4,27 @@
 {{ partial "head.html" . }}
 
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-8 col-sm-offset-2">
-        {{ partial "header.html" . }}
-        <div class="content">
-          {{ range .Data.Pages.GroupByDate "2006-01" }}
-          <h2>{{ .Key }}</h2>
-          <ul>
-            {{ range .Pages }}
-            <li>
-              <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
-            </li>
-            {{ end }}
-          </ul>
-          {{ end }}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                {{ partial "header.html" . }}
+                <div class="content">
+                    {{ range .Data.Pages.GroupByDate "2006-01" }}
+                    <h2>{{ .Key }}</h2>
+                    <ul>
+                        {{ range .Pages }}
+                        <li>
+                            <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+                        </li>
+                        {{ end }}
+                    </ul>
+                    {{ end }}
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  {{ partial "footer.html" . }}
+    {{ partial "footer.html" . }}
 </body>
 
 </html>
+<!--This will list all the elements of post section-->

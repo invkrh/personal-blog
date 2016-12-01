@@ -4,26 +4,27 @@
 {{ partial "head.html" . }}
 
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-8 col-sm-offset-2">
-        {{ partial "header.html" . }}
-        <div class="content">
-          <h2>{{ .Title }}</h2>
-          <ul>
-            {{ $data := .Data }} {{ range $key, $value := .Data.Terms }}
-	            <li>
-	              <h3>
-									<a href="/{{ $data.Plural }}/{{ $key | urlize }}">{{ lower $key }}</a> ({{ len $value }})
-								</h3>
-	            </li>
-            {{ end }}
-          </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                {{ partial "header.html" . }}
+                <div class="content">
+                    <h2>{{ .Title }}</h2>
+                    <ul>
+                        {{ $data := .Data }} {{ range $key, $value := .Data.Terms }}
+                        <li>
+                            <h3>
+                                <a href="/{{ $data.Plural }}/{{ $key | urlize }}">{{ lower $key }}</a> ({{ len $value }})
+                            </h3>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  {{ partial "footer.html" . }}
+    {{ partial "footer.html" . }}
 </body>
 
 </html>
+<!--Create a list of term for a given taxonomy, e.g. "/categories", "/tags"-->
