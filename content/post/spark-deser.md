@@ -1,30 +1,69 @@
 ---
-title: Distribute non-serializable objects in Spark
+title: Distribute (non-serializable) objects in Spark
 tags: [Spark]
 categories: [development]
 date: 2016-01-16T23:06:08+01:00
 draft: true
 ---
 
-Recently, I’ve been playing with Docker and DaoCloud and I found both of them amazing. So I decided to see what they could do on dockerizing my Hugo site and integrate it with DaoCloud’s CI service. The main workflow is like this: I setup a repo of my dockerized site on Github, and everytime I commit the changes to the repo with a new tag, it will automatically trigger DaoCloud to build and update this very site.
+### Foreword
 
-This is some text $\frac{1}{2}$ other text $f(x) = \int_{-\infty}^\infty
-    \hat f(\xi)\,e^{2 \pi i \xi x}
-    \,d\xi$
+In this blog post, we will talk about how to distribute objects to spark executors properly and efficiently.
+We will pay a lot of attention on the non-serializable objects because:
 
-$$
-\begin{array}{clc}
-(3, 4) & \rightarrow f(x) = (3x + 4) \% 12 \\
-x = 0, 1, 2 ... 11 & \rightarrow f(x) = 4, 7, 10, 1, 4, 7, 10, 1, 4, 7, 10, 1
-\end{array}
-$$
+* They can not be distributed **directly** and often comes up with the famous `Task not serializable` exception.
+* If an object is thread-safe, we really want it to be shared by threads by creating this kind of objects as few as possible .
 
-If an non-serializable object is created on driver, you can not send it to the executors *direactly*.
+### Distribute serializable object
 
-Three ways to do that:
+When writing spark jobs with some `RDD` APIs, it is common to reference an object outside a closure.
 
-1.  create `RDD` in `Spark Context`
-2.  create
+Let's take a trivial example of serializable object:
+
+```scala
+class Ser(val a: Int) extends Serializable
+
+val ref = new Ser(1) // referenced object
+rdd // 100 elements, 4 partitions, 25 elements / partition
+  .map {
+  // closure
+  x => x + ref.a
+}
+```
+
+What happens here is that `serObj` is included in the closure distributed to executors.
+Since `map` is a narrow dependence and the origin `rdd` has 4 partition, we have 4 tasks here.
+Each task corresponds to a closure.
+So object `serObj` is packaged into each task and sent to corresponding executors (4 times).
+
+This works well, if the size of the distributed object and # partitions are not too big. Otherwise, broadcast variables is needed.
+
+```scala
+val bv = sc.broadcast(new Ser(1))
+rdd.map { x => x + bv.value.a }
+```
+
+Not like the referenced object in closure which is send along with each task. The object is broadcast to each node only once, which saves a lot of bandwidth of network.
+
+### "Distribute" non-serializable object
+
+If an object is non-serializable, things become complicated.
+Most of the spark users might encounter the following exception.
+
+```java
+org.apache.spark.SparkException: Task not serializable
+  ...
+Caused by: java.io.NotSerializableException: xxxxxx
+  ...
+Serialization stack:
+  ...
+```
+If an non-serializable object is created on driver, you can not just send it to the executors *direactly* as describe in the previous section. In stead, you have to create the object on executors.
+
+You may have some choice:
+
+1.  Put the non-serializable object into an `object`
+2.  Create `RDD` in `Spark Context`
 3.  create
 
 <script src="https://gist.github.com/invkrh/54f3d795b2719f600bef.js"></script>

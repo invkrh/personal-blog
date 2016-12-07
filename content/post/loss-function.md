@@ -24,8 +24,6 @@ f(\mathbf{x}), \ &\text{for} \ y \ \text{is positive}\\
 \right.
 {{< /katex >}}
 
-{{< highlight go >}} {{< /highlight >}}
-
 The target function $f: \mathbb{R}^d \to [0, 1]$, where $d$ is the dimension of feature
 
 Actually, what we want to learn is another function call **logistic function** or **sigmoid fucntion** which approximate $f(\mathbf{x})$
