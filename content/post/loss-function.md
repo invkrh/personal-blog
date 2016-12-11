@@ -15,14 +15,14 @@ Actually, there are two fashions of labeling points. One is (0, 1), the other is
 
 In logistic regression, the target function $f(\mathbf{x})$ gives the probability of the label being positive or negative given $\mathbf{x}$ (the feature of the point) which is known as posterior, it can be represented as :
 
-{{< katex >}}
+{{<katex>}}
 P(y \mid \mathbf{x}) = \left \{
 \begin{array}{ll}
 f(\mathbf{x}), \ &\text{for} \ y \ \text{is positive}\\
 1 - f(\mathbf{x}), \ &\text{for} \ y \ \text{is negative}
 \end{array}
 \right.
-{{< /katex >}}
+{{</katex>}}
 
 The target function $f: \mathbb{R}^d \to [0, 1]$, where $d$ is the dimension of feature
 

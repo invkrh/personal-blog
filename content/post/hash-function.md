@@ -170,7 +170,7 @@ Finally, we get:
 {{</katex>}}
 , where $C \in \mathbb{N}^\*$
 
-Make $C=1$ and knowing that {{<inline>}}x_1, x_2 \in \{0 .., n - 1\}{{</inline>}} and $q < n$, then:
+Make $C=1$ and knowing that $x_1, x_2 \in \{0 .., n - 1\}$ and $q < n$, then:
 
 There must be a pair of $(x_1, x_2)$ makes $\mid x_1 - x_2 \mid = q^\prime$ holds.
 
@@ -332,7 +332,8 @@ f(2) = 0
 \right. \Rightarrow h_{min}(B) = 0
 {{</katex>}}
 
+
 , which is the signature of $B$
 
-We need to compute some more $h_{min}$ in order to estimate {{<inline>}}P[h_{min}(A) = h_{min}(B)]{{</inline>}}
+We need to compute some more $h\_{min}$ in order to estimate $P(h\_{min}(A) = h\_{min}(B)]$
 , which is the Jaccard similarity of $A$ and $B$   

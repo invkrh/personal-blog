@@ -44,8 +44,9 @@ tbody tr:nth-child(odd) th {
 }
 
 body {
+    padding-top: 70px; /*By default, navbar is height: 50px, margin-bottom: 20px*/
     margin: 0;
-    color: #555;
+    /*color: #555;*/
     font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, Serif;
     line-height: 1.7;
     letter-spacing: 0.01rem;
@@ -122,7 +123,7 @@ em {
 }
 
 code {
-    color: #d14;
+    color: #E3000E;
     background-color: #f7f7f9;
     border: 1px solid #e1e1e8;
     padding: 3px 3px 1px 3px;
@@ -169,13 +170,6 @@ blockquote p:last-child {
     margin-bottom: 0;
 }
 
-hr {
-    border: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
-    display: block;
-    /*margin: 1.5rem 0; */
-}
-
 button,
 .btn {
     background-image: none;
@@ -206,11 +200,6 @@ button,
     border: 1px solid #1ABC9C;
 }
 
-.header {
-    position: relative;
-    margin: 4rem auto;
-}
-
 .dropdown-menu {
     min-width: 0px;
 }
@@ -218,21 +207,12 @@ button,
 .site-title {
     font-size: 1.8rem;
     font-weight: 700;
-    margin-top: 40px;
-    margin-bottom: 10px;
+    /*margin-top: 40px;*/
+    /*margin-bottom: 10px;*/
 }
 
 .site-title a {
     color: #000;
-}
-
-/* Remove underscore for links */
-.social-bar a:hover {
-    text-decoration: none;
-}
-
-.social-icon {
-    color: #FFF;
 }
 
 .footer {
@@ -340,9 +320,9 @@ span.katex {
     color: #000;
 }
 
-.chart {
+/*.chart {
     margin-bottom: 2rem;
-}
+}*/
 
 .share-btn {
     margin-top: 4em
@@ -400,17 +380,28 @@ span.katex {
 
 /* Navbar */
 
-#app-navbar * {
+#app-navbar *, #app-navbar-mobile * {
     margin: 0;
 }
 
 .navbar-text,
 .navbar-brand {
+    color: white !important;
     font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, Serif;
     font-size: 16px;
 }
 
-.navbar-inverse .navbar-brand {
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+
+/*.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color:black !important;
+    background-color: white;
+    border-color: transparent !important;
+}*/
+
+.navbar-brand {
     font-size: 20px;
     color: #FFF;
 }
@@ -423,6 +414,27 @@ span.katex {
     text-align: center;
 }
 
+.icon-bar
+{
+  background: black!important;
+}
+.collapsed .icon-bar
+{
+  background: white !important;
+}
+
+button.navbar-toggle
+{
+  background: white !important;
+}
+button.navbar-toggle.collapsed
+{
+  background: black !important;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: rgba(0, 0, 0, 0.2); /* navbar toggled button horizontal divider */
+}
 
 .pace {
   -webkit-pointer-events: none;
@@ -439,7 +451,8 @@ span.katex {
 
 .pace .pace-progress {
   /*background: #29d;*/
-  background: #FFF;
+  background: #E3000E;
+  /*background: #1ABC9C;*/
   position: fixed;
   z-index: 2000;
   top: 0;
@@ -490,7 +503,21 @@ span.katex {
 
 @media (max-width: 480px) {
     body {
+        padding-top: 0px;
         font-size: 16px;
+    }
+
+    .post-content {
+        text-align: left;
+        margin: 5rem 0 0;
+    }
+
+    .previous {
+        text-align: right;
+    }
+
+    .next {
+        text-align: left;
     }
 }
 

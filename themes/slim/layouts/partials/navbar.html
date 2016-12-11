@@ -1,0 +1,103 @@
+ <nav id="navbar" class="navbar navbar-default navbar-fixed-top hidden-xs">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+         <!--<a class="navbar-brand visible-xs-*" href="{{ .Site.BaseURL }}">Data Hacking</a> -->
+      </div>
+      <div class="collapse navbar-collapse" id="app-navbar">
+        <ul class="navbar-right nav navbar-nav">
+          <li>
+            {{ with .Site.Params.GithubID }}
+            <a class="col-xs-3 social-icon" href="https://github.com/{{.}}">
+              <i class="fa fa-github fa-lg"></i>
+            </a>
+            {{ end }}
+
+            {{ with .Site.Params.TwitterID }}
+            <a class="col-xs-3 social-icon" href="https://twitter.com/{{.}}">
+              <i class="fa fa-twitter fa-lg"></i>
+            </a>
+            {{ end }}
+
+            {{ with .Site.Params.LinkedInID }}
+            <a class="col-xs-3 social-icon" href="https://www.linkedin.com/in/{{.}}">
+              <i class="fa fa-linkedin fa-lg"></i>
+            </a>
+            {{ end }}
+
+            {{ with .Site.Params.GmailID }}
+            <a class="col-xs-3 social-icon" href="mailto:{{.}}@gmail.com">
+              <i class="fa fa-envelope-o fa-lg"></i>
+            </a>
+            {{ end }}
+            <li>
+        </ul>
+        <!--Only for mobile: separator-->
+        <!--<hr class="visible-xs-*"> -->
+        <ul class="navbar-left nav navbar-nav">
+          {{ range .Site.Menus.main }}
+          <li>
+            <a class="navbar-text" href="{{ .URL }}">{{ .Name }}</a>
+          </li>
+          {{end}}
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+ <nav id="navbar" class="navbar navbar-default navbar-static-top visible-xs-block">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-mobile">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+         <a class="navbar-brand visible-xs-*" href="{{ .Site.BaseURL }}">Data Hacking</a>
+      </div>
+      <div class="collapse navbar-collapse" id="app-navbar-mobile">
+        <ul class="navbar-right nav navbar-nav">
+          <li>
+            {{ with .Site.Params.GithubID }}
+            <a class="col-xs-3 social-icon" href="https://github.com/{{.}}">
+              <i class="fa fa-github fa-lg"></i>
+            </a>
+            {{ end }}
+
+            {{ with .Site.Params.TwitterID }}
+            <a class="col-xs-3 social-icon" href="https://twitter.com/{{.}}">
+              <i class="fa fa-twitter fa-lg"></i>
+            </a>
+            {{ end }}
+
+            {{ with .Site.Params.LinkedInID }}
+            <a class="col-xs-3 social-icon" href="https://www.linkedin.com/in/{{.}}">
+              <i class="fa fa-linkedin fa-lg"></i>
+            </a>
+            {{ end }}
+
+            {{ with .Site.Params.GmailID }}
+            <a class="col-xs-3 social-icon" href="mailto:{{.}}@gmail.com">
+              <i class="fa fa-envelope-o fa-lg"></i>
+            </a>
+            {{ end }}
+            <li>
+        </ul>
+        <!--Only for mobile: separator-->
+        <!--<hr class="visible-xs-*"> -->
+        <ul class="navbar-left nav navbar-nav">
+          {{ range .Site.Menus.main }}
+          <li>
+            <a class="navbar-text" href="{{ .URL }}">{{ .Name }}</a>
+          </li>
+          {{end}}
+        </ul>
+      </div>
+    </div>
+  </nav>

@@ -74,12 +74,11 @@ The curve is the following:
 
 {{<funcPlot
   title="PDF"
-  xlab="x"
-  ylab="f(x)"
-  height="500"
+  xTitle="x"
+  yTitle="f(x)"
   min="-6"
   max="6"
-  step="0.01"
+  step="0.1"
   func="1 / (2 + Math.exp(-x) + Math.exp(x))" >}}
 
 The "bell curve" is very like the pdf of the normal distribution. Actually, this distribution is called logistic distribution. It resembles the normal distribution in shape but has heavier tails (higher kurtosis, see appendices).
@@ -116,22 +115,20 @@ The $PDF$ curve of $N(0, 1)$ can be plotted as following:
 
 {{<funcPlot
   title="PDF of N(0,1)"
-  xlab="x"
-  ylab="f(x)"
-  height="500"
-  min="-6"
-  max="6"
-  step="0.01"
+  xTitle="x"
+  yTitle="f(x)"
+  min="-4"
+  max="4"
+  step="0.1"
   func="Math.exp(-0.5 * x * x) / (Math.sqrt(2 * 3.1415926))" >}}
 
 The $CDF$ curve of $N(0, 1)$ can be plotted as following:
 
 {{<funcPlot
   title="CDF of N(0,1)"
-  xlab="x"
-  ylab="f(x)"
-  height="500"
-  min="-6"
-  max="6"
-  step="0.01"
+  xTitle="x"
+  yTitle="f(x)"
+  min="-4"
+  max="4"
+  step="0.1"
   func="1/ (Math.exp(-358 * x / 23 + 111* Math.atan(37 * x / 294)) + 1)" >}}

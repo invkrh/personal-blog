@@ -1,21 +1,93 @@
-<div class="chart" id="{{.Get "title"}}"></div>
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script type="text/javascript" src="/js/functionPlot.js"></script>
-<script type="text/javascript">
-var actual_width = document.getElementById('{{.Get "title"}}').offsetWidth
-var actual_height = actual_width * 2.0 / 3.0
-plotFunction({
-	div: "{{.Get "title"}}",
-	title: "{{.Get "title"}}",
-	xlab: "{{.Get "xlab"}}",
-	ylab: "{{.Get "ylab"}}",
+<div id="{{.Get "title"}}"></div>
 
-  height: actual_height,
-  min: parseFloat({{.Get "min"}}),
-  max: parseFloat({{.Get "max"}}),
-  step: parseFloat({{.Get "step"}}),
-  func: function(x) {
-		return eval({{.Get "func"}});
-	}
-})
+<script>
+
+function getHeight(heightWeightRatio) {
+    return document.getElementById('{{.Get "title"}}').offsetWidth * heightWeightRatio;
+}
+var func = function(x) { return eval({{ .Get "func" }}) }
+var min = parseFloat({{ .Get "min" }})
+var max = parseFloat({{ .Get "max" }})
+var step = parseFloat({{ .Get "step" }})
+
+var dataPoints = []
+for (var i = min; i <= max; i = i + step) {
+	dataPoints.push([i, func(i)])
+}
+
+var textStyle = {
+    "color": "#666666",
+    "font-family": "Droid Serif"
+}
+
+Highcharts.chart('{{.Get "title"}}', {
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 480 // Only for mobile view
+        },
+        chartOptions: {
+            chart: {
+                height: 250
+            },
+            legend: {
+                enabled: false
+            },
+            xAxis: {
+                title: null
+            },
+            yAxis: {
+                title: null,
+                labels: {
+                    align: 'left',
+                    x: 0,
+                    y: -2
+                }
+            }
+        }}]
+    },
+
+    credits: {
+        enabled: false
+    },
+    chart: {
+        height: 350
+    },
+    title: {
+        text: '{{.Get "title"}}',
+        style: textStyle
+    },
+    xAxis: {
+        title: {
+            text: '{{.Get "xTitle"}}',
+            style: textStyle
+        },
+            plotLines: [{
+            color: 'black', // Color value
+            dashStyle: 'longdashdot', // Style of the plot line. Default to solid
+            value: 0, // Value of where the line will appear
+            width: 1 // Width of the line
+        }]
+    },
+    yAxis: {
+        title: {
+            text: '{{.Get "yTitle"}}',
+            style: {
+                "color": "#666666",
+                "font-family": "Droid Serif"
+            }
+        },
+        endOnTick: false
+    },
+    series: [{
+        marker: {
+            enabled: false
+        },
+        showInLegend: false,
+        enableMouseTracking: false,
+        data: dataPoints,
+        color: '#E3000E'
+    }]
+});
+
 </script>
