@@ -1,6 +1,6 @@
 baseurl: "http://invkrh.me"
 languageCode: "en-us"
-title: "Hao Ren"
+title: "Data Hacking"
 theme: "slim"
 permalinks:
   post: /:year/:month/:slug/
@@ -25,6 +25,7 @@ menu:
       weight: 5
 
 params:
+  Blogger: "Hao Ren"
   Subtitle: "Software Engineer in Machine Learning"
   GithubID: "invkrh"
   TwitterID: "invkrh"
