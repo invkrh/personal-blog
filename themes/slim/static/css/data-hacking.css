@@ -46,7 +46,6 @@ tbody tr:nth-child(odd) th {
 body {
     padding-top: 70px; /*By default, navbar is height: 50px, margin-bottom: 20px*/
     margin: 0;
-    /*color: #555;*/
     font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, Serif;
     line-height: 1.7;
     letter-spacing: 0.01rem;
@@ -89,25 +88,16 @@ h6 {
     font-size: 1.15rem;
 }
 
-
-/*p,
-dl,
-ol,
-ul, ol ul
-{
-  margin-top: 0;
-  margin-bottom: 1.0rem;
-}*/
-
 a {
     background-color: transparent;
-    color: #2980b9;
+    color: black;
     /*color: #000000;*/
     text-decoration: none;
 }
 
 a:hover,
 a:focus {
+    color: black;
     text-decoration: underline;
 }
 
@@ -204,15 +194,21 @@ button,
     min-width: 0px;
 }
 
+.header {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
 .site-title {
     font-size: 1.8rem;
     font-weight: 700;
-    /*margin-top: 40px;*/
-    /*margin-bottom: 10px;*/
+    margin-top: 10px;
+    margin-bottom: 2px;
 }
 
 .site-title a {
     color: #000;
+    text-decoration: none;
 }
 
 .footer {
@@ -231,75 +227,24 @@ button,
     margin-bottom: 2rem;
 }
 
-.post-title:after {
-    content: '';
-    display: block;
-    border-top: 1px solid #ccc;
-    width: calc(100% + 30px);
-    position: absolute;
-    top: 30px;
-    left: -30px;
-    z-index: -1;
-}
-
 .post-title a {
     color: #333;
     background: #fff;
-    line-height: 60px;
+    line-height: 40px;
     font-size: 1.5rem;
     position: relative;
-    padding: 0 14px;
-    margin-left: -14px;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
+    text-decoration: none;
 }
 
-.post-title a:after,
-.post-title a:before {
-    content: '';
-    position: absolute;
-    border: 3px solid transparent;
-    top: 12px;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-}
-
-.post-title a:before {
-    left: -23px;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-.post-title a:after {
-    -webkit-transform: rotate(225deg);
-    -ms-transform: rotate(225deg);
-    transform: rotate(225deg);
-    right: -23px;
-}
-
-.post-title a:hover:before,
-.post-title a:hover:after {
-    border-top-color: #ccc;
-    border-right-color: #ccc;
-}
-
-.post-title a:hover:before {
-    left: -3px;
-}
-
-.post-title a:hover:after {
-    right: -3px;
-}
-
-.post-title {
-    margin-bottom: 0.75rem;
+.post-title a[class*="hvr-"]:before {
+    background: black;
+    height: 2px;
 }
 
 .post-meta {
     color: #ccc;
     font-size: 14px;
-    margin-top: -25px;
+    margin-top: -10px;
 }
 
 .post-tags a {
@@ -319,10 +264,6 @@ button,
 span.katex {
     color: #000;
 }
-
-/*.chart {
-    margin-bottom: 2rem;
-}*/
 
 .share-btn {
     margin-top: 4em
@@ -395,11 +336,16 @@ span.katex {
     color: white;
 }
 
-/*.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
-    color:black !important;
-    background-color: white;
+
+.navbar-default .navbar-nav>li>a[class*="hvr-"]:before {
+    background: white;
+    height: 3px;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: white;
     border-color: transparent !important;
-}*/
+}
 
 .navbar-brand {
     font-size: 20px;
@@ -450,9 +396,7 @@ button.navbar-toggle.collapsed
 }
 
 .pace .pace-progress {
-  /*background: #29d;*/
-  background: #E3000E;
-  /*background: #1ABC9C;*/
+  background: white;
   position: fixed;
   z-index: 2000;
   top: 0;
@@ -556,5 +500,4 @@ button.navbar-toggle.collapsed
         display: block;
         overflow-x: auto;
     }
-
 }

@@ -42,9 +42,8 @@ It looks like the following figure:
 
 {{<funcPlot
   title="Logistic Function"
-  xlab="s"
-  ylab="theta(s)"
-  height="500"
+  xTitle="s"
+  yTitle="theta(s)"
   min="-6"
   max="6"
   step="0.2"

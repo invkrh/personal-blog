@@ -14,9 +14,9 @@
                     <ul>
                         {{ $data := .Data }} {{ range $key, $value := .Data.Terms }}
                         <li>
-                            <h3>
+                            <h6>
                                 <a href="/{{ $data.Plural }}/{{ $key | urlize }}">{{ lower $key }}</a> ({{ len $value }})
-                            </h3>
+                            </h6>
                         </li>
                         {{ end }}
                     </ul>
