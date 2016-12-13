@@ -7,7 +7,7 @@ if ! [ -e ./public ]; then
 fi
 
 # Build the project.
-hugo -t slim
+hugo
 
 # Go To Public folder
 cd public

@@ -1,7 +1,6 @@
 baseurl: "http://invkrh.me"
 languageCode: "en-us"
 title: "Data Hacking"
-theme: "slim"
 permalinks:
   post: /:year/:month/:slug/
 paginate: 10
