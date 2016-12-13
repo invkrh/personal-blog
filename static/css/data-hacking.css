@@ -107,15 +107,29 @@ button:hover, .btn:hover {
 
 /* Footer */
 
+body, html {
+    height: 100%;
+}
+
+.container {
+    min-height: calc(100% - 160px);
+}
+
 .footer {
+    background: white !important;
     color: #95a5a6;
     font-size: 14px;
+    margin-top: 5rem;
+    border: none;
     text-align: center;
-    margin: 5rem 0 1rem;
 }
 
 .footer a {
     color: #333;
+}
+
+.footer p {
+    margin-top: 20px;
 }
 
 /* Post */
