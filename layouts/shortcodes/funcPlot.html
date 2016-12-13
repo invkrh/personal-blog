@@ -16,7 +16,7 @@ for (var i = min; i <= max; i = i + step) {
 }
 
 var textStyle = {
-    "color": "#666666",
+    "color": "black",
     "font-family": "Droid Serif"
 }
 
@@ -62,7 +62,7 @@ Highcharts.chart('{{.Get "title"}}', {
             text: '{{.Get "xTitle"}}',
             style: textStyle
         },
-            plotLines: [{
+        plotLines: [{
             color: 'black', // Color value
             dashStyle: 'longdashdot', // Style of the plot line. Default to solid
             value: 0, // Value of where the line will appear
@@ -72,10 +72,7 @@ Highcharts.chart('{{.Get "title"}}', {
     yAxis: {
         title: {
             text: '{{.Get "yTitle"}}',
-            style: {
-                "color": "#666666",
-                "font-family": "Droid Serif"
-            }
+            style: textStyle
         },
         endOnTick: false
     },
@@ -86,7 +83,7 @@ Highcharts.chart('{{.Get "title"}}', {
         showInLegend: false,
         enableMouseTracking: false,
         data: dataPoints,
-        color: '#E3000E'
+        color: '#FF4081'
     }]
 });
 
