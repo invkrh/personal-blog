@@ -7,6 +7,8 @@ function handleNavbarPosition() {
 }
 
 $(document).ready(function() {
+    $('table').addClass('table');
+    $('table').wrap( "<div class='table-wrapper'></div>" );
     $('.post-title a').addClass('hvr-underline-from-left');
     $('.navbar-default .navbar-nav>li>a').addClass('hvr-underline-reveal');
     handleNavbarPosition()
