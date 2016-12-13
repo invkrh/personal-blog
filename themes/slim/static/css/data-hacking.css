@@ -321,7 +321,7 @@ span.katex {
 
 /* Navbar */
 
-#app-navbar *, #app-navbar-mobile * {
+#app-navbar * {
     margin: 0;
 }
 
