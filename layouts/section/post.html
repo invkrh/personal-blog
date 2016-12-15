@@ -11,14 +11,18 @@
                 {{ partial "header.html" . }}
                 <div class="content">
                     {{ range .Data.Pages.GroupByDate "2006-01" }}
-                    <h2>{{ .Key }}</h2>
-                    <ul>
-                        {{ range .Pages }}
-                        <li>
-                            <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
-                        </li>
-                        {{ end }}
-                    </ul>
+                        <div class="term">
+                            <h4 class="date-label">
+                                <span class="label label-default">{{ .Key }}</span>
+                            </h4>
+                            <ul>
+                            {{ range .Pages }}
+                            <li>
+                                <a class='title-item' href="{{ .Permalink }}">{{ .Title }}</a>
+                            </li>
+                            {{ end }}
+                            <ul>
+                        </div>
                     {{ end }}
                 </div>
             </div>

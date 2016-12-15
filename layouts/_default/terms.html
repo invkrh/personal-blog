@@ -11,15 +11,25 @@
                 {{ partial "header.html" . }}
                 <div class="content">
                     <h2>{{ .Title }}</h2>
-                    <ul>
-                        {{ $data := .Data }} {{ range $key, $value := .Data.Terms }}
-                        <li>
-                            <h6>
-                                <a href="/{{ $data.Plural }}/{{ $key | urlize }}">{{ lower $key }}</a> ({{ len $value }})
-                            </h6>
-                        </li>
+                    <div>
+                        {{ $data := .Data }} 
+                        {{ range $key, $value := .Data.Terms }}
+                            <div class="term">
+                                <a class="label label-default" data-toggle="collapse" data-target="#{{ $key }}" 
+                                    aria-expanded="false" aria-controls="{{ $key }}">{{ lower $key }}</a>
+                                <span class="badge">{{ len $value }}</span>
+                                <div class="collapse" id="{{ $key }}">
+                                    <div class="well">
+                                        {{ range $v := $value }}
+                                        <li>
+                                            <a class='title-item' href="{{ $v.Page.Permalink }}">{{ $v.Page.Title }}</a>
+                                        </li>
+                                        {{ end }}
+                                    </div>
+                                </div>
+                            </div>
                         {{ end }}
-                    </ul>
+                    </div>
                 </div>
             </div>
         </div>

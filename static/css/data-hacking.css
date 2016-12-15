@@ -3,13 +3,14 @@
 html {
     box-sizing: border-box;
     font-size: 100%;
+    overflow-y: scroll; /* Always show scroll bar */
 }
 
 body {
     padding-top: 70px; /*By default, navbar is height: 50px, margin-bottom: 20px*/
     margin: 0;
-    font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, Serif;
-    line-height: 1.7;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, Serif;    
+    line-height: 30px;
     letter-spacing: 0.01rem;
 }
 
@@ -23,15 +24,14 @@ h6 {
     font-weight: 700;
     line-height: 1.25;
     margin: 2rem 0 1.25rem;
-    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, Serif;
+    
 }
 
 h1 {
     font-size: 2rem;
 }
 
-h2 {
-    font-size: 1.8rem;
+h2 {font-size: 1.8rem;
 }
 
 h3 {
@@ -164,9 +164,10 @@ body, html {
 .post-content {
     text-align: justify;
     margin-top: 5rem;
+    font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, Serif;
 }
 
-/* Page Navigation */
+/* Pager */
 
 .page-nav {
     margin-top: 4em;
@@ -202,12 +203,12 @@ body, html {
     right: 10%;
 }
 
-.well,
-.well-sm,
-.well:hover,
-.well-sm:hover,
-.well:focus,
-.well-sm:focus {
+#top-link-block .well,
+#top-link-block .well-sm,
+#top-link-block .well:hover,
+#top-link-block .well-sm:hover,
+#top-link-block .well:focus,
+#top-link-block .well-sm:focus {
     color: #1ABC9C;
     background: transparent;
     border: 1px solid #1ABC9C;
@@ -221,7 +222,6 @@ body, html {
 
 .navbar-text, .navbar-brand {
     color: white !important;
-    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, Serif;
     font-size: 16px;
 }
 
@@ -314,6 +314,47 @@ span.katex {
 #disqus_thread {
     margin-top: 4em
 }
+
+/* List View widget */
+
+.date-label {
+    margin: 10px 0;
+}
+
+.term {
+    padding-bottom: 25px;
+}
+
+.label, .badge {
+    background: black;
+}                                
+
+.badge {
+    margin-left: 5px;
+}       
+
+.label {
+    color: white;
+    /*text-decoration: none;*/
+}
+
+.title-item {
+    margin: 0px;
+    display: inline-block;    
+}
+
+a.title-item {
+    color: black
+}
+
+.collapse .well,
+.collapsing .well, 
+.collapse.in .well {
+    background: white;
+    border-color: black;
+    margin: 10px 0;
+}
+
 
 /* ----------- */
 /* Media Query */

@@ -10,11 +10,13 @@
             <div class="col-sm-8 col-sm-offset-2">
                 {{ partial "header.html" . }}
                 <div class="content">
-                    <h2>{{ .Title }}</h2>
+                    <h4>
+                        <span class="label label-default">{{ lower .Title }}</span>
+                    <h4> 
                     <ul>
                         {{ range .Data.Pages }}
                         <li>
-                            <h6>
+                            <h6 class='title-item'>
                                 <a href="{{ .Permalink }}">{{ .Title }}</a>
                             </h6>
                         </li>

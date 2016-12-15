@@ -9,13 +9,15 @@ fi
 # Build the project.
 hugo
 
+hash_tag=$(git log --pretty=format:'%h' -n 1)
+
 # Go To Public folder
 cd public
 # Add changes to git.
 git add -A
 
 # Commit changes.
-msg="Rebuild site at `date --rfc-3339="seconds"`"
+msg="Rebuild site on $hash_tag"
 if [ $# -eq 1 ]
   then msg="$1"
 fi
