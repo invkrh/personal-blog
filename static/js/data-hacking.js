@@ -11,7 +11,12 @@ $(document).ready(function() {
     $('table').wrap( "<div class='table-wrapper'></div>" );
     $('.post-title a').addClass('hvr-underline-from-left');
     $('.navbar-default .navbar-nav>li>a').addClass('hvr-underline-reveal');
+    $('[data-toggle*="tooltip"]').tooltip()
     handleNavbarPosition()
+});
+
+$(window).load(function() {
+    $('.term .collapse').first().collapse() // Auto show first term
 });
 
 $(window).resize(function() {

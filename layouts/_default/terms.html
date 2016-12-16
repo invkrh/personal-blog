@@ -13,19 +13,26 @@
                     <h2>{{ .Title }}</h2>
                     <div>
                         {{ $data := .Data }} 
-                        {{ range $key, $value := .Data.Terms }}
+                        {{ range $key, $value := .Data.Terms.ByCount }}
                             <div class="term">
-                                <a class="label label-default" data-toggle="collapse" data-target="#{{ $key }}" 
-                                    aria-expanded="false" aria-controls="{{ $key }}">{{ lower $key }}</a>
-                                <span class="badge">{{ len $value }}</span>
-                                <div class="collapse" id="{{ $key }}">
-                                    <div class="well">
-                                        {{ range $v := $value }}
-                                        <li>
-                                            <a class='title-item' href="{{ $v.Page.Permalink }}">{{ $v.Page.Title }}</a>
+                                <a class="label label-default" data-toggle="collapse" data-target="#{{ $value.Name }}" 
+                                    aria-expanded="false" aria-controls="{{ $value.Name }}">{{ lower $value.Name }} <span class="caret"></span></a>
+                                <span class="badge" data-toggle="tooltip" data-placement="right" 
+                                title="Click tag on the left to show more">{{ $value.Count }}</span>
+                                <div class="collapse" id="{{ $value.Name }}">
+                                    <ul class="list-group title-list">
+                                        {{ range $value.Pages.ByDate }}
+                                        <li class="list-group-item title-item row">
+                                            <span class="col-sm-3 post-meta hidden-xs">
+                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                <span class="">{{ .Date.Format "Jan 2, 2006" }}</span>
+                                            </span>
+                                            <div>
+                                                <a class='col-xs-12 col-sm-9' href="{{ .Permalink }}">{{ .Title }}</a>
+                                            </div>
                                         </li>
                                         {{ end }}
-                                    </div>
+                                    </ul>
                                 </div>
                             </div>
                         {{ end }}

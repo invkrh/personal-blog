@@ -10,7 +10,7 @@ body {
     padding-top: 70px; /*By default, navbar is height: 50px, margin-bottom: 20px*/
     margin: 0;
     font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, Serif;    
-    line-height: 30px;
+    line-height: 1.75;
     letter-spacing: 0.01rem;
 }
 
@@ -50,11 +50,8 @@ h6 {
     font-size: 1.15rem;
 }
 
-img {
-    max-width: 100%;
-    margin: 1rem 0 0 1rem;
-    border: 0;
-    border-radius: 5px;
+a {
+    color: black;    
 }
 
 code {
@@ -92,10 +89,14 @@ button:hover, .btn:hover {
 
 /* Header */
 
+.header * {
+    padding: 0;
+    color: black !important;
+}
+
 .header {
     margin-top: 60px;
     margin-bottom: 60px;
-    color: black !important;
 }
 
 .site-title {
@@ -134,11 +135,15 @@ body, html {
 
 /* Post */
 
+.post-title {
+    margin-bottom: 0px;
+} 
+
 .post-title a {
     color: black;
-    line-height: 40px;
     font-size: 1.5rem;
     text-decoration: none;
+    
 }
 
 .post-title a[class*="hvr-"]:before {
@@ -146,14 +151,26 @@ body, html {
     height: 2px;
 }
 
+.post-content a {
+    border-bottom: 1px dashed #000;
+    text-decoration: none;
+}
+
+.post-content a:hover {
+    color: #E3000E;
+    border-bottom-color: #E3000E;
+}
+
 .post-meta {
     color: #ccc;
     font-size: 14px;
-    margin-top: -10px;
 }
 
-.post-tags a {
-    text-align: right;
+.post .post-meta {
+    margin-top: 2px;
+}
+
+.post-tag {
     color: #ccc;
 }
 
@@ -317,34 +334,41 @@ span.katex {
 
 /* List View widget */
 
-.date-label {
-    margin: 10px 0;
-}
-
 .term {
     padding-bottom: 25px;
 }
 
-.label, .badge {
-    background: black;
-}                                
-
 .badge {
+    color: white;
+    background: black;
     margin-left: 5px;
 }       
 
 .label {
     color: white;
-    /*text-decoration: none;*/
+    background: black;
+}
+
+a.label {
+    font-size: 15px;
+}
+
+.title-list {
+    margin: 5px 0px;
 }
 
 .title-item {
+    font-size: 15px;
     margin: 0px;
-    display: inline-block;    
+    margin-bottom: -1px;
 }
 
-a.title-item {
-    color: black
+.title-item{
+    padding: 0px;
+}
+
+.title-item a {
+    color: black;
 }
 
 .collapse .well,
@@ -386,6 +410,10 @@ a.title-item {
     body {
         font-size: 16px;
     }
+
+    .tag-list {
+        text-align: left; 
+    }
 }
 
 /* Portrait phones and smaller */
@@ -393,6 +421,10 @@ a.title-item {
     body {
         padding-top: 0px;
         font-size: 16px;
+    }
+    
+    .tag-list {
+        text-align: left; 
     }
 
     .post-content {

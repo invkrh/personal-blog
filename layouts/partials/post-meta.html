@@ -1,28 +1,27 @@
 <div class="row post-meta">
-  <div class="col-xs-4">
+  <div class="col-xs-12">
     <div class="row">
-      <div class="col-xs-12 visible-md visible-lg">
-        <span class="post-date">{{ .Date.Format "Jan 2, 2006" }} /</span>
-        <span class="disqus-comment-count" data-disqus-identifier="{{ .Permalink }}"></span>
+      <div class="col-xs-12 col-md-5">
+        <div class="row">
+          <div class="col-xs-6 text-left">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+            <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+          </div>
+          <div class="col-xs-6 text-right">
+            <i class="fa fa-comment-o" aria-hidden="true"></i>
+            <span class="disqus-comment-count" data-disqus-identifier="{{ .Permalink }}"></span>
+          </div>
+        </div>
       </div>
-      <div class="visible-xs visible-sm">
-        <span class="col-xs-12 post-date">{{ .Date.Format "Jan 2, 2006" }}</span>
-        <span class="col-xs-12 disqus-comment-count" data-disqus-identifier="{{ .Permalink }}"></span>
+      <div class="col-xs-12 col-md-7 tag-list text-right">
+        {{ if .Params.tags }}
+          <span class="post-tags">
+            {{ range .Params.tags }}
+              <a class="post-tag" href="/tags/{{ . | urlize }}"><i class="fa fa-tag" aria-hidden="true"></i> {{ title . }}</a>
+            {{ end }}
+          </span>
+        {{ end }}
       </div>
     </div>
-  </div>
-  <div class="col-xs-8 text-right">
-    {{ if .Params.tags }}
-    <span class="visible-md visible-lg post-tags">
-			{{ range .Params.tags }}
-				<a href="/tags/{{ . | urlize }}"># {{ title . }}</a>
-			{{ end }}
-    </span>
-    <span class="visible-xs visible-sm post-tags">
-			{{ range .Params.tags }}
-				<a class="col-xs-12" href="/tags/{{ . | urlize }}">#{{ . }}</a>
-			{{ end }}
-    </span>
-		{{ end }}
   </div>
 </div>
