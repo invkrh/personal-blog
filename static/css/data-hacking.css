@@ -143,7 +143,8 @@ body, html {
     color: black;
     font-size: 1.5rem;
     text-decoration: none;
-    
+    line-height: 1.5;
+    width: 100%;
 }
 
 .post-title a[class*="hvr-"]:before {
@@ -176,6 +177,10 @@ body, html {
 
 .post-tags a:hover {
     color: #000;
+}
+
+.tag-list {
+    text-align: right; 
 }
 
 .post-content {
@@ -369,16 +374,14 @@ a.label {
 
 .title-item a {
     color: black;
+    font-weight: bold;
 }
 
-.collapse .well,
-.collapsing .well, 
-.collapse.in .well {
+.title-list.well {
     background: white;
     border-color: black;
     margin: 10px 0;
 }
-
 
 /* ----------- */
 /* Media Query */
