@@ -357,14 +357,14 @@ a.label {
     margin: 5px 0px;
 }
 
+.title-list a {
+    padding: 0px;
+}
+
 .title-item {
     font-size: 15px;
     margin: 0px;
     margin-bottom: -1px;
-}
-
-.title-item{
-    padding: 0px;
 }
 
 .title-item a {
