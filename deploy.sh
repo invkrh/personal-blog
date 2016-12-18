@@ -6,8 +6,12 @@ if ! [ -e ./public ]; then
   git submodule add -b master git@github.com:invkrh/invkrh.github.io.git public
 fi
 
+rm -rf ./public/*
+
 # Build the project.
 hugo
+
+cp CNAME ./public
 
 hash_tag=$(git log --pretty=format:'%h' -n 1)
 

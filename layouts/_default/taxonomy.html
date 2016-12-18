@@ -14,7 +14,7 @@
                         <span class="label label-default">{{ lower .Title }}</span>
                     </h4>
                     <div class="well title-list">
-                        {{ range .Data.Pages.ByDate }}
+                        {{ range .Data.Pages.ByDate.Reverse }}
                         <div class="title-item row">
                             <span class="col-sm-3 post-meta hidden-xs">
                                 <i class="fa fa-calendar" aria-hidden="true"></i>
@@ -24,7 +24,6 @@
                                 <i class="fa fa-caret-right" aria-hidden="true"></i> {{ .Title }}
                             </a>
                         </div>
-
                         {{ end }}
                     </div> 
                 </div>

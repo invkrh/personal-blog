@@ -10,41 +10,42 @@
         <a class="navbar-brand hidden-sm hidden-md hidden-lg" href="{{ .Site.BaseURL }}">Data Hacking</a>
       </div>
       <div class="collapse navbar-collapse" id="app-navbar">
-        <ul class="navbar-right nav navbar-nav">
-          <li>
-            {{ with .Site.Params.GithubID }}
-            <a class="col-xs-3 social-icon" href="https://github.com/{{.}}">
-              <i class="fa fa-github fa-lg"></i>
-            </a>
-            {{ end }}
-
-            {{ with .Site.Params.TwitterID }}
-            <a class="col-xs-3 social-icon" href="https://twitter.com/{{.}}">
-              <i class="fa fa-twitter fa-lg"></i>
-            </a>
-            {{ end }}
-
-            {{ with .Site.Params.LinkedInID }}
-            <a class="col-xs-3 social-icon" href="https://www.linkedin.com/in/{{.}}">
-              <i class="fa fa-linkedin fa-lg"></i>
-            </a>
-            {{ end }}
-
-            {{ with .Site.Params.GmailID }}
-            <a class="col-xs-3 social-icon" href="mailto:{{.}}@gmail.com">
-              <i class="fa fa-envelope-o fa-lg"></i>
-            </a>
-            {{ end }}
-            <li>
-        </ul>
         <!--Only for mobile: separator-->
         <!--<hr class="visible-xs-*"> -->
         <ul class="navbar-left nav navbar-nav">
           {{ range .Site.Menus.main }}
           <li>
-            <a class="navbar-text" href="{{ .URL }}">{{ .Name }}</a>
+            <a class="navbar-text hvr-underline-reveal" href="{{ .URL }}">{{ .Name }}</a>
           </li>
           {{end}}
+        </ul>
+
+        <ul class="navbar-right nav navbar-nav">
+          <li>
+            {{ with .Site.Params.GithubID }}
+            <a class="col-xs-3 social-icon hvr-underline-reveal" href="https://github.com/{{.}}">
+              <i class="fa fa-github fa-lg"></i>
+            </a>
+            {{ end }}
+
+            {{ with .Site.Params.TwitterID }}
+            <a class="col-xs-3 social-icon hvr-underline-reveal" href="https://twitter.com/{{.}}">
+              <i class="fa fa-twitter fa-lg"></i>
+            </a>
+            {{ end }}
+
+            {{ with .Site.Params.LinkedInID }}
+            <a class="col-xs-3 social-icon hvr-underline-reveal" href="https://www.linkedin.com/in/{{.}}">
+              <i class="fa fa-linkedin fa-lg"></i>
+            </a>
+            {{ end }}
+
+            {{ with .Site.Params.GmailID }}
+            <a class="col-xs-3 social-icon hvr-underline-reveal" href="mailto:{{.}}@gmail.com">
+              <i class="fa fa-envelope-o fa-lg"></i>
+            </a>
+            {{ end }}
+            <li>
         </ul>
       </div>
     </div>

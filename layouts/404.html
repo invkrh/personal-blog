@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+{{ partial "head.html" . }}
+
+<body>
+    {{ partial "navbar.html" . }}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                {{ partial "header.html" . }}
+                <div class="content">
+                    <div class="row">
+                        <h1 class="404">404 File not found</h1>
+                    </div>
+                    <div class="row">
+                        <img src="/img/avatar.jpg" class="avatar img-rounded img-responsive" alt="Responsive image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ partial "footer.html" . }}
+</body>
+
+</html>

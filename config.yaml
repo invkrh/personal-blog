@@ -3,15 +3,16 @@ languageCode: "en-us"
 title: "Data Hacking"
 permalinks:
   post: /:year/:month/:slug/
-paginate: 10
+paginate: 5
+googleAnalytics: "UA-74632317-1"
 
 menu:
   main:
     # - Name: "Home"
     #   URL: "/"
     #   weight: 1
-    - Name: "Archives"
-      URL: "/post/"
+    - Name: "Archive"
+      URL: "/archive/"
       weight: 2
     - Name: "Categories"
       URL: "/categories/"
@@ -30,7 +31,7 @@ params:
   TwitterID: "invkrh"
   LinkedInID: "renhao"
   GmailID: "invkrh"
-  AnalyticsID: "UA-74632317-1"
+  # AnalyticsID: "UA-74632317-1"
   DisqusShortname: "invkrh"
   Summary: false # takes true or false
   Comments: true

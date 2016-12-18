@@ -20,23 +20,26 @@
                         </div>
                     </div>
                 </div>
-                <div class="row page-nav">
-                    <div class="col-xs-6 previous">
+
+                <nav aria-label="...">
+                    <ul class="row pager">
                         {{ if .PrevInSection }}
-                        <a class="btn" href="{{ .PrevInSection.Permalink }}">Older</a>
-                        <br>
-                        <p class="page-title">
-                            << {{ .PrevInSection.Title }}</p>
-                                {{ end }}
-                    </div>
-                    <div class="col-xs-6 next">
-                        {{ if .NextInSection }}
-                        <a class="btn" href="{{ .NextInSection.Permalink }}">Newer</a>
-                        <br>
-                        <p class="page-title">{{ .NextInSection.Title }} >></p>
+                        <li class="col-xs-6 previous">
+                            <a class="btn" href="{{ .PrevInSection.Permalink }}"><i class="fa fa-chevron-left" aria-hidden="true"></i> Older</a>
+                            <br/>
+                            <p class="pager-title">{{ .PrevInSection.Title }}</p>    
+                        </li>
                         {{ end }}
-                    </div>
-                </div>
+                        {{ if .NextInSection }}
+                        <li class="col-xs-6 next">
+                            <a class="btn" href="{{ .NextInSection.Permalink }}">Newer <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                            <br/>
+                            <p class="pager-title">{{ .NextInSection.Title }}</p>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </nav>
+
                 {{ partial "social-share.html" . }} {{ partial "disqus.html" . }}
             </div>
         </div>

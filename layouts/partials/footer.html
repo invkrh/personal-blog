@@ -10,7 +10,8 @@
   </a>
 </span>
 
-{{ with .Site.Params.AnalyticsID }}{{ partial "analytics.html" . }}{{ end }}
+<!--{{ with .Site.Params.AnalyticsID }}{{ partial "analytics.html" . }}{{ end }}-->
+{{ template "_internal/google_analytics_async.html" . }}
 
 <script id="dsq-count-scr" src="//invkrh.disqus.com/count.js" async></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/prism.min.js"></script>
