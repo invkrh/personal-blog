@@ -70,16 +70,15 @@ pre code {
     border: none;
 }
 
-/* button is easily overrided by other classes, use some !important mark*/
-button, .btn {
-    border: 1px solid #1ABC9C !important;
-    border-radius: 5px !important;
+button, .btn, .pager li>a {
+    border: 1px solid #1ABC9C;
+    border-radius: 5px;
     color: #1ABC9C;
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
     white-space: nowrap;
-    -webkit-transition: all 0.3s !important;
+    -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
 
@@ -226,6 +225,19 @@ a.post-tag:hover {
 
 .pagination li a {
     color: black;
+    border-color: #ccc !important
+}
+
+.pagination .active a {
+    color: white;
+    background-color: black;
+}
+
+.pagination li a:hover,
+.pagination .active a:hover {
+    color: black;
+    background-color: #ccc;
+    border-color: #ccc;
 }
 
 /* Scroll-to-top button */

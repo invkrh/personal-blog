@@ -14,7 +14,9 @@
                     {{ range .Data.Pages.GroupByDate "2006" }}
                         <div class="term">
                             <a class="label label-default" data-toggle="collapse" data-target="#{{ .Key }}" 
-                                aria-expanded="false" aria-controls="{{ .Key }}">{{ .Key }} <span class="caret"></span></a>
+                                aria-expanded="false" aria-controls="{{ .Key }}">
+                                {{ .Key }}  <i class="fa fa-caret-left" aria-hidden="true"></i>
+                            </a>
                             <span class="badge" data-toggle="tooltip" data-placement="right" 
                                 title="Click tag on the left to show more">{{ len .Pages }}</span>
                             <div class="collapse" id="{{ .Key }}">
@@ -25,9 +27,8 @@
                                             <i class="fa fa-calendar" aria-hidden="true"></i>
                                             <span class="">{{ .Date.Format "Jan 2" }}</span>
                                         </span>
-                                        <a class='col-xs-12 col-sm-9' href="{{ .Permalink }}">
-                                            <i class="fa fa-caret-right" aria-hidden="true"></i> {{ .Title }}
-                                        </a>
+                                        <i class="col-xs-1 col-sm-1 fa fa-caret-right title-item-caret" aria-hidden="true"></i>
+                                        <a class='col-xs-10 col-sm-8' href="{{ .Permalink }}">{{ .Title }}</a>
                                     </div>
                                     {{ end }}
                                 </div>
