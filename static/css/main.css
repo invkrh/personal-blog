@@ -71,9 +71,9 @@ pre code {
 }
 
 button, .btn, .pager li>a {
-    border: 1px solid #1ABC9C;
+    border: 1px solid black;
     border-radius: 5px;
-    color: #1ABC9C;
+    color: black;
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
@@ -84,10 +84,12 @@ button, .btn, .pager li>a {
 
 button:hover, .btn:hover, .pager li>a:hover {
     color: #fff;
-    background: #1ABC9C;
+    background: black;
 }
 
+/**********/
 /* Header */
+/**********/
 
 .header * {
     padding: 0;
@@ -106,7 +108,9 @@ button:hover, .btn:hover, .pager li>a:hover {
     margin-bottom: 2px;
 }
 
+/**********/
 /* Footer */
+/**********/
 
 body, html {
     height: 100%;
@@ -133,7 +137,9 @@ body, html {
     margin-top: 20px;
 }
 
+/********/
 /* Post */
+/********/
 
 .post-title {
     margin-bottom: 0px;
@@ -192,7 +198,9 @@ a.post-tag:hover {
     font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, Serif;
 }
 
+/*********/
 /* Pager */
+/*********/
 
 .pager {
     margin-top: 4em;
@@ -219,6 +227,10 @@ a.post-tag:hover {
     text-align: right;
 }
 
+/**************/
+/* Pagination */
+/**************/
+
 .pagination-nav {
     margin-top: 50px;
 }
@@ -240,7 +252,9 @@ a.post-tag:hover {
     border-color: #ccc;
 }
 
+/************************/
 /* Scroll-to-top button */
+/************************/
 
 #top-link-block.affix {
     position: fixed;
@@ -249,44 +263,34 @@ a.post-tag:hover {
     right: 10%;
 }
 
-#top-link-block .well,
-#top-link-block .well-sm,
-#top-link-block .well:hover,
-#top-link-block .well-sm:hover,
-#top-link-block .well:focus,
-#top-link-block .well-sm:focus {
-    color: #1ABC9C;
+#top-link-block .well {
+    color: black;
     background: transparent;
-    border: 1px solid #1ABC9C;
+    border: 1px solid black;
 }
 
-/* Navbar */
+/*****************/
+/* Navbar on top */
+/*****************/
 
-#nav-menu * {
-    margin: 0;
+/* Cancel all margins to make navbar menu as default size */
+#navbar a,
+#navbar ul {
+    margin: 0px;
+    color: white
 }
 
-.navbar-text, .navbar-brand {
-    color: white !important;
-    font-size: 16px;
+#navbar .navbar-brand {
+    color: white ;
 }
 
-.navbar-brand {
-    font-size: 20px;
+#navbar a[class*="hvr-"]:before {
+    background: white;
+    height: 3px;
 }
 
 .navbar-default {
     background-color: #000;
-}
-
-/* All link on nav bar */
-.navbar-default .navbar-nav>li>a {
-    color: white !important;
-}
-
-.navbar-default .navbar-nav>li>a[class*="hvr-"]:before {
-    background: white;
-    height: 3px;
 }
 
 /* When collapse */
@@ -294,20 +298,20 @@ a.post-tag:hover {
     text-align: center;
 }
 
-.icon-bar {
-    background-color: white !important;
+#navbar .icon-bar {
+    background-color: white;
 }
 
-.collapsed .icon-bar {
-    background-color: black!important;
+#navbar .collapsed .icon-bar {
+    background-color: black;
 }
 
-button.navbar-toggle {
-    background-color: black !important;
+#navbar .navbar-toggle {
+    background-color: black;
 }
 
-button.navbar-toggle.collapsed {
-    background-color: white !important;
+#navbar .navbar-toggle.collapsed {
+    background-color: white;
 }
 
 .collapsing {
@@ -319,7 +323,7 @@ button.navbar-toggle.collapsed {
 }
 
 /* navbar toggled button horizontal divider */
-.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+#navbar .navbar-collapse {
     border-color: rgba(0, 0, 0, 0.2); 
 }
 
@@ -371,9 +375,13 @@ span.katex {
 
 /* List View widget */
 
-.term {
-    padding-bottom: 25px;
+ul.term {
+    padding: 0px;    
 }
+
+/*.term {
+    padding-bottom: 25px;
+}*/
 
 .badge {
     color: white;
@@ -386,6 +394,7 @@ span.katex {
     background: black;
 }
 
+/* Stablize term length */
 .term .label i {
     width: 9px;
 }
@@ -398,34 +407,18 @@ a.label {
     margin: 5px 0px;
 }
 
+.title-list * {
+    color: black;
+}
+
 .title-list a {
     padding: 0px;
-}
-
-.title-item {
     font-size: 16px;
-    margin: 0px;
-    margin-bottom: -1px;
-}
-
-i.title-item-caret {
-    margin-top: 5px;
-    text-align: right;
-}
-
-.title-item a {
-    color: black;
-    font-weight: bold;
-}
-
-.title-item .post-meta * {
-    color: black;
 }
 
 .title-list.well {
     background: white;
     border-color: black;
-    margin: 10px 0;
 }
 
 /* ----------- */
@@ -462,6 +455,15 @@ i.title-item-caret {
     .tag-list {
         text-align: left; 
     }
+
+    /*
+    Hide nav-bar when navbar collapse 
+    Note: navbar collapse break point is here 
+    */
+    .nav-bar-hidden {
+        background: transparent;
+        border-color: transparent;
+    }
 }
 
 /* Portrait phones and smaller */
@@ -470,16 +472,13 @@ i.title-item-caret {
         font-size: 16px;
     }
     
-    .tag-list {
-        text-align: left; 
-    }
-
     .post-content {
         text-align: left;
     }
 
     .title-list {
-        padding: 5px;
+        padding-left: 10px;
+        padding-right: 0px;
     }
 
     /*.previous {
@@ -502,9 +501,7 @@ i.title-item-caret {
         visibility: hidden;
     }
 
-    .nav-bar-hidden {
-        background: transparent;
-    }
+   
 }
 
 /* Device not PC (not wide enough) */

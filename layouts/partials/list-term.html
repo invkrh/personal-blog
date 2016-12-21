@@ -1,0 +1,25 @@
+ <ul class="term">
+    <a class="label label-default" data-toggle="collapse" data-target="#{{ .name }}"
+        aria-expanded="false" aria-controls="{{ .name }}">
+        {{ lower .name }} <i class="fa fa-caret-left" aria-hidden="true"></i>
+    </a>
+    <span class="badge" data-toggle="tooltip" data-placement="right" title="Click tag on the left to show more">
+        {{ .count }}
+    </span>
+    <div class="collapse" id="{{ .name }}">
+        <div class="well title-list">
+            {{ range .pages.ByDate.Reverse }}
+            <div class="title-item row">
+                <span class="col-sm-3 post-meta hidden-xs">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    <span class="">{{ .Date.Format "Jan 2, 2006" }}</span>
+                </span>
+                <span class="col-xs-1 col-sm-1" >
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                </span>
+                <a class='col-xs-10 col-sm-8' href="{{ .Permalink }}">{{ .Title }}</a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</ul>

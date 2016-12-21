@@ -1,28 +1,22 @@
 function showNavBar() {
-    $(".navbar-default").css({"border-color": "rgba(0, 0, 0, 0.2)"})        
     $(".navbar-brand").removeClass("hidden")
     $('#navbar').removeClass("nav-bar-hidden")
 }
 
 function hideNavBar() {
-    $(".navbar-default").css({"border-color": "transparent"})
     $(".navbar-brand").addClass("hidden")
     $('#navbar').addClass("nav-bar-hidden")
 }
 
-$(window).load(function() {
-    $('.term .collapse').first().collapse() // Auto show first term
-});
-
-$(window).resize(function() {
-    handleNavbarPosition()  
-});
+// $(window).load(function() {
+//     $('.term .collapse').first().collapse() // Auto show first term
+// });
 
 $(window).scroll(function() {
     if ($(this).scrollTop() == 0) {
         showNavBar()
     } else {
-        $("#nav-menu").collapse('hide')
+        $("#nav-menu").collapse('hide') // hide collapsible menu when scrolling
         hideNavBar()
     }
 });

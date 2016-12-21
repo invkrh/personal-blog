@@ -12,28 +12,7 @@
                 <div class="content">
                     <h2>Archive</h2>
                     {{ range .Data.Pages.GroupByDate "2006" }}
-                        <div class="term">
-                            <a class="label label-default" data-toggle="collapse" data-target="#{{ .Key }}" 
-                                aria-expanded="false" aria-controls="{{ .Key }}">
-                                {{ .Key }}  <i class="fa fa-caret-left" aria-hidden="true"></i>
-                            </a>
-                            <span class="badge" data-toggle="tooltip" data-placement="right" 
-                                title="Click tag on the left to show more">{{ len .Pages }}</span>
-                            <div class="collapse" id="{{ .Key }}">
-                                 <div class="well title-list">
-                                    {{ range .Pages.ByDate.Reverse }}
-                                    <div class="title-item row">
-                                        <span class="col-sm-3 post-meta hidden-xs">
-                                            <i class="fa fa-calendar" aria-hidden="true"></i>
-                                            <span class="">{{ .Date.Format "Jan 2" }}</span>
-                                        </span>
-                                        <i class="col-xs-1 col-sm-1 fa fa-caret-right title-item-caret" aria-hidden="true"></i>
-                                        <a class='col-xs-10 col-sm-8' href="{{ .Permalink }}">{{ .Title }}</a>
-                                    </div>
-                                    {{ end }}
-                                </div>
-                            </div>
-                        </div>
+                        {{ partial "list-term.html" (dict "name" .Key "count" (len .Pages) "pages" .Pages) }}
                     {{ end }}
                 </div>
             </div>
