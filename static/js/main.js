@@ -45,4 +45,13 @@ $(document).ready(function() {
            hideNavBar()
         }
     })
+
+    // click to dismiss collapsed nav menu
+    $(document).click(function (event) {
+        var clickover = $(event.target);
+        var _opened = $(".navbar-collapse").hasClass("collapse in");
+        if (_opened === true && clickover.closest('.navbar').attr('id') === undefined) {
+            $("button.navbar-toggle").click();
+        }
+    });
 });
