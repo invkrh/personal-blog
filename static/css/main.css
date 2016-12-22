@@ -71,9 +71,9 @@ pre code {
 }
 
 button, .btn, .pager li>a {
-    border: 1px solid black;
+    border: 1px solid #1ABC9C;
     border-radius: 5px;
-    color: black;
+    color: #1ABC9C;
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
@@ -84,7 +84,7 @@ button, .btn, .pager li>a {
 
 button:hover, .btn:hover, .pager li>a:hover {
     color: #fff;
-    background: black;
+    background: #1ABC9C;
 }
 
 /**********/
@@ -264,9 +264,9 @@ a.post-tag:hover {
 }
 
 #top-link-block .well {
-    color: black;
+    color: #1ABC9C;
     background: transparent;
-    border: 1px solid black;
+    border: 1px solid #1ABC9C;
 }
 
 /*****************/
@@ -322,8 +322,8 @@ a.post-tag:hover {
     transition: background-color 0.5s;
 }
 
-/* navbar toggled button horizontal divider */
-#navbar .navbar-collapse {
+#navbar, 
+#navbar .navbar-collapse { /* navbar toggled button horizontal divider */
     border-color: rgba(0, 0, 0, 0.2); 
 }
 
@@ -460,7 +460,7 @@ a.label {
     Hide nav-bar when navbar collapse 
     Note: navbar collapse break point is here 
     */
-    .nav-bar-hidden {
+    #navbar.nav-bar-hidden {
         background: transparent;
         border-color: transparent;
     }
